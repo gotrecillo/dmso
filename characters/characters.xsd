@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.w3schools.com"
+          xmlns="http://www.w3schools.com characters.xsd"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          
+  <xs:element name="characters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="character"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="character">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="size" type="xs:string"/>
+        <xs:element name="race" type="xs:string"/>
+        <xs:element name="alignement" type="xs:string"/>
+        <xs:element name="ac" type="xs:string"/>
+        <xs:element name="hp" type="xs:string"/>
+        <xs:element name="speed" type="xs:string"/>
+        <xs:element ref="stats"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stats">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="str" type="xs:string"/>
+        <xs:element name="dex" type="xs:string"/>
+        <xs:element name="con" type="xs:string"/>
+        <xs:element name="int" type="xs:string"/>
+        <xs:element name="wis" type="xs:string"/>
+        <xs:element name="cha" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

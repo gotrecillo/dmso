@@ -1,0 +1,35 @@
+<monster id="zombie">
+                <name>Zombie</name>
+                <size>mediano</size>
+                <type>No muerto</type>
+                <alignement>neutral malvado</alignement>
+                <ac>8</ac>
+                <hp>22</hp>
+                <hd>3d8 + 9</hd>
+                <speed>20 ft.</speed>
+                <str>13</str>
+                <dex>6</dex>
+                <con>16</con>
+                <int>3</int>
+                <wis>6</wis>
+                <cha>6</cha>
+                <detail name="Tiradas de salvación">Sabiduria +0</detail>
+                <detail name="Inmunidades al daño">Veneno</detail>
+                <detail name="Inmunidades a condiciones">Envenenado</detail>
+                <detail name="Sentidos">Percepción pasiva 13</detail>
+                <detail name="Idiomas">Entiende los idiomas que conocía vivo pero no puede hablar</detail>
+                <cr>1/4</cr>
+                <xp>50</xp>
+                <abilities>
+                        <ability name="Fortaleza no muerta">Si el daño reduce los puntos de vida de un zombi a 0, hace una tirada de salvación de constitución de DC 5 + el daño recibido a excepcion de que el daño sea radiante o de un golpe crítico. Si supera la tirada el zombi permanece con 1 punto de vida.</ability>
+                </abilities>
+                <actions>
+                        <action>
+                                <title>Golpe</title>
+                                <type>Ataque de cuerpo a cuerpo</type>
+                                <description>+3 golpe, alcance 5 ft., un objetivo</description>
+                                <hit>4 (1d6 + 1) daño aplastante.</hit>
+                        </action>
+                </actions>
+                <imagePath>../images/characters/zombi.png</imagePath>
+        </monster> 

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test</title>
+  <link rel="stylesheet" type="text/css" href="test.css">
+  <script type="text/javascript">
+      function myFunc(){alert("cacadelavaca");}
+
+      var win = window.open("caca.html");
+      win.onload = function() {win.RunCallbackFunction = myFunc; };
+  </script>
+</head>
+<body>
+<h1>Hola</h1>
+</body>
+</html>

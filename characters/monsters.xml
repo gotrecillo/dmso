@@ -1,0 +1,110 @@
+<?xml-stylesheet type="text/xsl" href="transform.xsl?chosen_id"?>
+<monsters>
+
+  <monster id="bugbear" visible="yes">
+    <name>Osgo</name>
+    <size>mediano</size>
+    <type>Humanoide (goblinoide)</type>
+    <alignement>caótico maligno</alignement>
+    <ac>16 (armadura de pellejo, escudo)</ac>
+    <hp>27</hp>
+    <hd>5d8 +5</hd>
+    <speed>30 ft.</speed>
+    <str>15</str>
+    <dex>14</dex>
+    <con>13</con>
+    <int>8</int>
+    <wis>11</wis>
+    <cha>9</cha>
+    <detail name="Habilidades">Sigilo +6, Supervivencia +2</detail>
+    <detail name="Sentidos">Vision en la oscuridad 60 ft., Percepción pasiva 10</detail>
+    <detail name="Idiomas">Común, goblin.</detail>
+    <cr>1</cr>
+    <xp>200</xp>
+    <abilities>
+      <ability name="Bruto"> Cuando el osgo golpea con un ataque cuerpo a cuerpo, el ataque hace un dado extra del daño del arma al objetivo (incluido abajo).</ability>
+      <ability name="Ataque sorpresa">Si el osgo sorprende a una riatura y golpea con un ataque durante la primera ronda de combate, el objetivo recibe 2d6 de daño extra.</ability>
+    </abilities>
+    <actions>
+      <action>
+        <title>Lucero del alba</title>
+        <type></type>
+        <description></description>
+        <hit></hit>
+      </action>
+    </actions>
+    <imagePath></imagePath>
+  </monster> 
+    
+  <monster id="wolf" visible="yes">
+    <name>Lobo</name>
+    <size>mediano</size>
+    <type>Bestia</type>
+    <alignement>no alineado</alignement>
+    <ac>13 (armadura natural)</ac>
+    <hp>11</hp>
+    <hd>2d8 + 2</hd>
+    <speed>40 ft.</speed>
+    <str>12</str>
+    <dex>15</dex>
+    <con>12</con>
+    <int>3</int>
+    <wis>12</wis>
+    <cha>12</cha>
+    <detail name="Habilidades">Percepción +3, Sigilo +4</detail>
+    <detail name="Sentidos">Percepción pasiva 13</detail>
+    <detail name="Idiomas">---</detail>
+    <cr>1/4</cr>
+    <xp>50</xp>
+    <abilities>
+      <ability name="Olfato y oido afilado">El lobo tiene ventaja en tiradas de Percepción que dependan del olfato o el oido.</ability>
+      <ability name="Tacticas de manada">El lobo tiene ventaja en tiradas de ataque contra una criatura si al menops un aliado no incapacitado esta a 5 pies de la criatura.</ability>
+    </abilities>
+    <actions>
+      <action>
+        <title>Mordisco</title>
+        <type>Ataque de cuerpo a cuerpo</type>
+        <description>+8 golpe, alcance 5 ft., un objetivo</description>
+        <hit>7 (2d4 + 2) daño perforante. Si el objetivo es una criatura, debe pasar una tirada de salvación de fuerza con DC 11 o ser derribado al suelo.</hit>
+      </action>
+    </actions>
+    <imagePath>../images/characters/wolf.png</imagePath>
+  </monster>
+
+  <monster id="zombi">
+    <name>Zombie</name>
+    <size>mediano</size>
+    <type>No muerto</type>
+    <alignement>neutral malvado</alignement>
+    <ac>8</ac>
+    <hp>22</hp>
+    <hd>3d8 + 9</hd>
+    <speed>20 ft.</speed>
+    <str>13</str>
+    <dex>6</dex>
+    <con>16</con>
+    <int>3</int>
+    <wis>6</wis>
+    <cha>6</cha>
+    <detail name="Tiradas de salvación">Sabiduria +0</detail>
+    <detail name="Inmunidades al daño">Veneno</detail>
+    <detail name="Inmunidades a condiciones">Envenenado</detail>
+    <detail name="Sentidos">Percepción pasiva 13</detail>
+    <detail name="Idiomas">Entiende los idiomas que conocía vivo pero no puede hablar</detail>
+    <cr>1/4</cr>
+    <xp>50</xp>
+    <abilities>
+      <ability name="Fortaleza no muerta">Si el daño reduce los puntos de vida de un zombi a 0, hace una tirada de salvación de constitución de DC 5 + el daño recibido a excepcion de que el daño sea radiante o de un golpe crítico. Si supera la tirada el zombi permanece con 1 punto de vida.</ability>
+    </abilities>
+    <actions>
+      <action>
+        <title>Golpe</title>
+        <type>Ataque de cuerpo a cuerpo</type>
+        <description>+3 golpe, alcance 5 ft., un objetivo</description>
+        <hit>4 (1d6 + 1) daño aplastante.</hit>
+      </action>
+    </actions>
+    <imagePath>../images/characters/zombi.png</imagePath>
+  </monster> 
+
+</monsters>

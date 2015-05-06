@@ -1,0 +1,81 @@
+#inner_visor{
+	width: 100%;
+	height: 50em;
+	background-color: red;
+}
+
+#map_labeled{
+	position: relative;
+	border-radius: 20px;
+	width: 70%;	
+	height:100%;
+	margin-top: 2%;
+	margin-left: 15%;
+}
+
+#map_to_label{
+	width: 100%;
+}
+
+.map_link{
+	display: block;
+	position: absolute;
+	height: 6%;
+	width: 6%;
+}
+
+#link_one{
+	border: 0.1em solid red;
+	left: 11%;
+	top: 47.5%;
+}
+
+#link_two{
+	border: 0.1em solid green;
+	left: 29%;
+	top: 69.5%;
+}
+
+#link_three{
+	border: 0.1em solid gray;
+	left: 44.5%;
+	top: 54%;
+}
+
+#link_four{
+	border: 0.1em solid yellow;
+	left: 67.5%;
+	top: 38%;
+}
+
+
+#link_five{
+	border: 0.1em solid orange;
+	left: 75%;
+	top: 17%;
+}
+
+#link_six{
+	border: 0.1em solid white;
+	left: 84%;
+	top: 46.5%;
+}
+
+#link_seven{
+	border: 0.1em solid gold;
+	left: 54.5%;
+	top: 25.5%;
+}
+
+#link_eight{
+	border: 0.1em solid black;
+	left: 30.5%;
+	top: 25.5%;
+}
+
+#link_nine{
+	border: 0.1em solid purple;
+	left: 58%;
+	top: 64.5%;
+}
+

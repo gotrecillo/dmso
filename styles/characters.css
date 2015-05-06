@@ -1,0 +1,97 @@
+body{
+	background-color: #EBFFEB;
+}
+
+h1, h2{
+	color: darkgreen;
+	margin-bottom: 0;
+}
+
+h1, h2, p{
+	padding-left: 1%;
+}
+
+h2{
+	border-bottom: 0.1em solid darkgreen;
+	margin-bottom: 0.2em;
+}
+
+#center{
+	width: 80%;
+	margin: 0 auto;
+}
+
+p{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.black{
+	color: #001406;
+}
+
+.black > p{
+	padding-bottom: 1em;
+}
+
+.portrait{
+	width: 60%;
+	margin: 0 auto;
+}
+
+.portrait > img{
+	width: 100%;
+}
+
+#char_index{
+	width: 20%;
+}
+
+a{	
+	line-height: 100%;
+	color: darkgreen;
+	font-family: Impact, Charcoal, sans-serif;
+	text-decoration: none;
+}
+
+.big {
+	height: 0.3em;
+	color: green;
+	background-color: darkgreen;
+	border-radius: 10px;
+}
+
+td, th{
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+ul{
+	list-style: none;
+	padding:0;
+    margin:0;
+    margin-bottom: 1em;
+}
+
+li:last-child{
+	margin-bottom: 1em;
+}
+
+li { 
+	padding-left: 1em; 
+    text-indent: -.7em;
+    vertical-align: middle;
+    margin-bottom: -1.5em;
+}
+
+li > a {
+	line-height: 2em;
+}
+
+li:before {
+	position: relative;
+	top: 0.3em;
+	font-size: 2.3em;
+    content: "* ";
+    color: darkgreen; /* or whatever color you prefer */
+}

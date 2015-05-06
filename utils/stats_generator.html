@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../styles/utils.css">
+	<link rel="stylesheet" type="text/css" href="../styles/stats_generator.css">
+	<script type="text/javascript">
+		function generate(){
+			var dies = ["1group_1dice", "1group_2dice", "1group_3dice", "1group_4dice", "2group_1dice", "2group_2dice", "2group_3dice", "2group_4dice", "3group_1dice", "3group_2dice", "3group_3dice", "3group_4dice", "4group_1dice", "4group_2dice", "4group_3dice", "4group_4dice", "5group_1dice", "5group_2dice", "5group_3dice", "5group_4dice", "6group_1dice", "6group_2dice", "6group_3dice", "6group_4dice"];
+			var values = [];
+			
+			for (var i = 0; i < dies.length; i++) {
+				values[values.length]=draw_dice(dies[i]);
+			};
+
+			document.getElementById("1group_result").innerHTML = get_stat_value(values[0], values[1], values[2], values[3]);
+			document.getElementById("2group_result").innerHTML = get_stat_value(values[4], values[5], values[6], values[7]);
+			document.getElementById("3group_result").innerHTML = get_stat_value(values[8], values[9], values[10], values[11]);
+			document.getElementById("4group_result").innerHTML = get_stat_value(values[12], values[13], values[14], values[15]);
+			document.getElementById("5group_result").innerHTML = get_stat_value(values[16], values[17], values[18], values[19]);
+			document.getElementById("6group_result").innerHTML = get_stat_value(values[20], values[21], values[22], values[23]);
+		};
+
+
+		function draw_dice(element_id){
+			var value = Math.floor(Math.random() * 6) + 1;
+			switch(value) {
+			    case 1:
+			        document.getElementById(element_id).src="../images/dice/dice1.png";
+			        break;
+			    case 2:
+			        document.getElementById(element_id).src="../images/dice/dice2.png";
+			        break;
+			    case 3:
+			        document.getElementById(element_id).src="../images/dice/dice3.png";
+			        break;
+			    case 4:
+			        document.getElementById(element_id).src="../images/dice/dice4.png";
+			        break;
+			    case 5:
+			        document.getElementById(element_id).src="../images/dice/dice5.png";
+			        break;
+			    case 6:
+			        document.getElementById(element_id).src="../images/dice/dice6.png";
+			        break;
+			} 
+			return value;
+		};
+
+		function get_stat_value(a, b, c, d){
+			var min = a;
+			var sum = 0;
+			var numbers = [a,b,c,d];
+			for (var i = 0; i < numbers.length; i++) {
+				sum = sum + numbers[i];
+				if (numbers[i] < min) {
+					min = numbers[i];
+				};
+			};
+			return sum - min;
+		}
+
+	</script>
+	<title>Generador de estadísticas</title>
+</head>
+<body>
+	<div id="container">
+		<h1>Generador aleatorio de estadísticas</h1>
+		<div class="group" id="first_group">
+			<div class="dice"><img id="1group_1dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="1group_2dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="1group_3dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="1group_4dice" src="../images/dice/dice_logo.png"></div>
+			<div id="1group_result" class="dice result"></div>
+		</div>
+		<div class="group" id="second_group">
+			<div class="dice"><img id="2group_1dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="2group_2dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="2group_3dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="2group_4dice" src="../images/dice/dice_logo.png"></div>
+			<div id="2group_result" class="dice result"></div>
+		</div>
+		<div class="group" id="third_group">
+			<div class="dice"><img id="3group_1dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="3group_2dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="3group_3dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="3group_4dice" src="../images/dice/dice_logo.png"></div>
+			<div id="3group_result" class="dice result"></div>
+		</div>
+		<div class="group" id="fourth_group">
+			<div class="dice"><img id="4group_1dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="4group_2dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="4group_3dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="4group_4dice" src="../images/dice/dice_logo.png"></div>
+			<div id="4group_result" class="dice result"></div>
+		</div>
+		<div class="group" id="fifth_group">
+			<div class="dice"><img id="5group_1dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="5group_2dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="5group_3dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="5group_4dice" src="../images/dice/dice_logo.png"></div>
+			<div id="5group_result" class="dice result"></div>
+		</div>
+		<div class="group" id="sixth_group">
+			<div class="dice"><img id="6group_1dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="6group_2dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="6group_3dice" src="../images/dice/dice_logo.png"></div>
+			<div class="dice"><img id="6group_4dice" src="../images/dice/dice_logo.png"></div>
+			<div id="6group_result" class="dice result"></div>
+		</div>
+		<button class="btn" onclick="generate()">Generar estadísticas</button>
+	</div>	
+</body>
+</html>

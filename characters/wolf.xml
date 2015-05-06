@@ -1,0 +1,37 @@
+<?xml-stylesheet type="text/xsl" href="transform.xsl"?>
+<monsters>
+        <monster name="Lobo">
+                <name>Lobo</name>
+                <size>mediano</size>
+                <type>Bestia</type>
+                <alignement>no alineado</alignement>
+                <ac>13 (armadura natural)</ac>
+                <hp>11</hp>
+                <hd>2d8 + 2</hd>
+                <speed>40 ft.</speed>
+                <str>12</str>
+                <dex>15</dex>
+                <con>12</con>
+                <int>3</int>
+                <wis>12</wis>
+                <cha>12</cha>
+                <detail name="Habilidades">Percepción +3, Sigilo +4</detail>
+                <detail name="Sentidos">Percepción pasiva 13</detail>
+                <detail name="Idiomas">---</detail>
+                <cr>1/4</cr>
+                <xp>50</xp>
+                <abilities>
+                        <ability name="Olfato y oido afilado">El lobo tiene ventaja en tiradas de Percepción que dependan del olfato o el oido.</ability>
+                        <ability name="Tacticas de manada">El lobo tiene ventaja en tiradas de ataque contra una criatura si al menops un aliado no incapacitado esta a 5 pies de la criatura.</ability>
+                </abilities>
+                <actions>
+                        <action>
+                                <title>Mordisco</title>
+                                <type>Ataque de cuerpo a cuerpo</type>
+                                <description>+8 golpe, alcance 5 ft., un objetivo</description>
+                                <hit>7 (2d4 + 2) daño perforante. Si el objetivo es una criatura, debe pasar una tirada de salvación de fuerza con DC 11 o ser derribado al suelo.</hit>
+                        </action>
+                </actions>
+                <imagePath>../images/characters/wolf.png</imagePath>
+        </monster>
+</monsters>

@@ -1,0 +1,46 @@
+
+button{
+	margin-left: 30%;
+}
+
+div.group{
+	padding-left: 5%;
+	height: 11%;
+	width: 80%;
+	margin-left: 10%;
+	margin-bottom: 1%;
+}
+
+div.dice:last-child{
+	border-top-right-radius: 20px;	
+	border-bottom-right-radius: 20px;
+	border-right: solid 3px #556B2F; 
+}
+
+div.dice:first-child{
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-left: solid 3px #556B2F; 
+}
+
+div.dice{
+	border-top: solid 3px #556B2F;
+	border-bottom: solid 3px #556B2F;
+	height: 100%;
+	width: 15%;
+	background-color: #F5F5DC;
+	float: left;
+}
+
+div.result{
+	color: #556B2F;
+	text-align: center;
+	line-height: 1.4em;
+	font-size: 3em;
+}
+
+div.dice img{
+	height: 90%;
+	margin-top: 2%;
+	margin-left: 25%;
+}

@@ -1,0 +1,27 @@
+body{
+  background-image: url(../images/main.jpg);
+  background-size: 100%;
+  height: 96%;
+}
+
+#contact{
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 1em;
+  padding: 1em;
+  margin-bottom: 5%;
+  background-color: AntiqueWhite;
+  border-radius: 20px;
+}
+
+#submit{
+  text-align: center;
+}
+
+form{
+  color: brown;
+}
+
+table{
+  margin: 0 auto;
+}

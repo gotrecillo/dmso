@@ -1,0 +1,32 @@
+html{	
+	background-image: url(../images/main.jpg);
+	background-size: 100%;
+}
+
+li > a{
+	color: brown;	
+}
+
+h5 > a{
+	color: white;
+}
+
+h5{
+	font-size: 1.1em;
+	font-weight: bolder;
+	margin-bottom: -8px;
+	width: 22%;
+}
+
+#webmap{
+	margin-left: 2%;
+	padding-bottom: 2.4%;
+}
+
+ul{
+	border-radius: 20px;
+	background: rgb(250,235,215);
+	background: rgba(250,235,215,0.8);
+	width: 20%;
+	color: brown;
+}

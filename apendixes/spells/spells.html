@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../styles/spell_main.css">
+	<title>Hechizos</title>
+	<script type="text/javascript"> 
+
+      	function colorize(color){
+      		document.getElementById("visor").style.background = color;
+	      	var x = document.getElementById("visor");
+			var y = (x.contentWindow || x.contentDocument);
+			if (y.document)y = y.document;
+			y.body.style.color = color;
+			y.body.style.background = color;
+			y.getElementById('range').style.color = color;
+			y.getElementById('length').style.color = color;
+			y.getElementById('comp').style.color = color;
+			y.getElementById('time').style.color = color;
+		}
+
+		function open_spell_index(rol, color){
+			window.open('aid.html?color=color', 'visor');
+		}
+
+	</script>
+</head>
+<body>
+	<div id="classtable">
+		<table id="clases">
+			<tr>
+				<td id="bard"><a href="acid_splash.html" target="visor"><img src="../../images/classes/chibibard.png"></a></td>
+				<td id="cleric"><a href=""><img src="../../images/classes/chibicleric.png"></a></td>
+				<td id="druid"><a href=""><img src="../../images/classes/chibidruid.png"></a><br/></td>
+				<td id="paladin"><a href=""><img src="../../images/classes/chibipaladin.png"></a></td>
+				<td id="ranger"><a href=""><img src="../../images/classes/chibiranger.png"></a></td>
+				<td id="sorcerer"><a href=""><img src="../../images/classes/chibisorcerer.png"></a></td>
+				<td id="warlock"><a href=""><img src="../../images/classes/chibiwarlock.png"></a></td>
+				<td id="wizard"><a href=""><img src="../../images/classes/chibiwizard.png"></a></td>
+			</tr>
+		</table>
+	</div>
+	<iframe id="visor" src="acid_splash.html" class="blue" name="visor"></iframe>
+</body>
+</html>

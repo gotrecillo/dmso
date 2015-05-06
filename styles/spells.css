@@ -1,0 +1,56 @@
+body, html{
+	height: 98%;
+	width: 98%;
+	background-color: transparent;
+}
+
+div{
+	position: absolute;
+	border-radius: 2%;
+	left: 25%;
+	width: 50%;
+	height: 98%;
+}
+
+td{
+	padding: 0.3em;
+	background-color: white;
+}
+
+.text{
+	color: black;
+}
+#name{
+	padding-top: 0.1em;
+	padding-bottom: 0.1em;
+	font-size: 2em;
+	font-weight: bolder;
+	text-transform: uppercase;
+	border-top-left-radius:0.5em;
+	border-top-right-radius:0.5em;
+}
+
+#desc{
+	color: black;
+	border-bottom-right-radius:1em;
+	border-bottom-left-radius:1em;
+	padding-bottom: 5em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.upper{
+	font-weight: bolder;
+	text-transform: uppercase;
+}
+
+p{
+	color: white;
+	font-weight: bolder;
+}
+
+table{
+	margin-top: 2em;
+	text-align: center;
+	vertical-align: center;
+}

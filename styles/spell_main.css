@@ -1,0 +1,62 @@
+html, body{
+	width: 98%;
+	height: 96%;
+	background-color: #DAF3FF;
+
+}
+
+table{
+	margin: 0 auto;
+	text-align: center;
+}
+
+img{
+	width: 100%;
+}
+
+#paladin{
+	background-color: #009999;
+}
+
+#bard{
+	background-color: #660066;
+}
+
+#cleric{
+	background-color: #FF9933;
+}
+
+#druid{
+	background-color: #33CC33;
+}
+
+#ranger{
+	background-color: #754719;
+}
+
+#sorcerer{
+	background-color: red;
+}
+
+#wizard{
+	background-color: #990033;
+}
+
+#warlock{
+	background-color: #CC0099;
+}
+
+table#clases{
+	border-collapse: collapse;
+	color: white;
+	font-weight: bolder;
+}
+
+iframe{
+	border-color: transparent;
+	background-color: #3366FF;
+	margin-top: 1%;
+	margin-left: 10%;
+	width: 80%;
+	height: 70%;
+}

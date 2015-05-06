@@ -1,0 +1,21 @@
+#leftmenu{
+	position: fixed;
+	left: 2%;
+	top: 4.5%;
+	background-color: AntiqueWhite;
+	width: 11%;
+	border-radius: 20px;
+	padding-top: 1.2em;
+	padding-bottom: 1.2em;
+	overflow:auto;
+}
+
+#leftmenu > a{
+	width: 100%;
+	padding-left: 1em;
+	font-size:1.2em;
+	color: brown;
+	text-decoration: none;
+	font-weight: bold;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<characters xmlns="http://www.w3schools.com"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.w3school.com characters.xsd">
+  <character>
+    <name>Jamma Gleamsilver</name>
+    <size>small</size>
+    <race>humanoid (gnome)</race>
+    <alignement>neutral</alignement>
+    <ac>15 (leather armor)</ac>
+    <hp>22 (4d6+8)</hp>
+    <speed>25</speed>
+    <stats>
+      <str>8</str>
+      <dex>17</dex>
+      <con>14</con>
+      <int>15</int>
+      <wis>10</wis>
+      <cha>12</cha>
+    </stats>
+  </character>
+</characters>

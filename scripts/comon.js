@@ -1,0 +1,3 @@
+function showCampaigns () {
+  alert('caca');
+}

@@ -1,0 +1,23 @@
+button{
+	position: relative;
+	left: 42%;
+	margin-bottom: 1%;
+}
+
+div#inner_container{
+	width: 80%;
+	margin-left: 10%;
+}
+
+div#names{
+	padding-left: 2em;
+	color: #556B2F;
+	font-weight: bolder;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+p{	
+	color: #556B2F;
+	font-weight: bold;
+	text-align: center;
+}

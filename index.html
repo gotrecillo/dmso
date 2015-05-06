@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="scripts/google.js"></script>
+	<script type="text/javascript" src="scripts/index.js"></script>
+	<script type="text/javascript" src="scripts/common.js"></script>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="styles/campaign.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/index.css"/>
+	<title>Dungeon And Dragons Pantalla Master</title>
+</head>
+<body>
+		<div id="center">
+			<div class="blocks" id="campaigns">
+				<a href="lmop.html"><img id="lmop_campaign" src="images/lmop_campaign.jpg"/></a>
+				<a href="hodq.html"><img id="hodq_campaing" src="images/hodq_campaign.jpg"/></a>
+			</div>
+			<div class="blocks" id="header">
+				<img id="campaing" src="images/campaign.jpg" onclick="showCampaigns()" />
+				<a href="apendixes/apendixes.html"><img id="apendixes" src="images/apendixes.png"/></a>
+				<a href="utils/utils.html"><img id="utils" src="images/utils.png"/></a>
+			</div>
+			<div class="blocks">
+				<gcse:search></gcse:search>
+			</div>
+			<div id="tweeter">
+				<p></p>
+				<a class="twitter-timeline" href="https://twitter.com/ADNGamer" data-widget-id="589756133897809921">Tweets por el @ADNGamer.</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+			</div>
+		</div>
+	<div id="right">
+		<a href="index.html"><img id="logo" src="images/logomini.png"/></a>
+	</div>
+	<div id="loginBox">
+		<form>
+			<table>
+				<tr>
+					<td>Usuario: </td>
+					<td><input type="text" id="user" name="user"/></td>
+				</tr>
+				<tr>
+					<td>Contraseña: </td>
+					<td><input type="password" id="password" name="password"/></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Identificarse" id="login" onclick="logUser()"/></td>
+					<td><input type="button" value="Registrarse" id="signup" onclick="window.open('register.html', '_self')" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div id="footer">
+		<a href=""><img class="social" id="twitterImg" src="images/twiter.png"/></a>
+		<a href=""><img class="social" id="facebookImg" src="images/facebook.png"/></a>
+		<a href=""><img class="social" id="youtubeImg" src="images/youtube.jpeg"/></a>
+		<a href=""><img class="social" id="googleImg" src="images/google.png"/></a>
+		<table id="footerTable">
+			<tr>
+				<td><a class="footerLink" href="webmap.html">Mapa web</a></td>
+				<td><a class="footerLink" href="contact.html">Contáctanos</a></td>
+			</tr>
+			<tr>
+				<td colspan="2"> © Copyright 2015, All Rights Reserved.</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
