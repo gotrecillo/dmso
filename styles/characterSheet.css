@@ -1,0 +1,42 @@
+html, body{
+	height: 98%;
+	width: 98%;
+}
+
+
+table#headTable{
+	table-layout: fixed;
+	margin: 0 auto;
+	width: 100%;
+}
+
+table#statsTable{
+	table-layout: fixed;
+	width: 50%;
+	text-align: center;
+}
+
+div#header, div#stats {
+	width: 80%;
+	margin: 0 auto;
+}
+img{
+	width: 100%;
+}
+
+input.txt, input.btn{
+	width: 100%;
+}
+
+td { 
+	width: 14,28571428571429%; 
+}
+
+td.bot{
+	vertical-align: bottom;
+}
+
+td.top{
+	vertical-align: top;
+	text-align: center;
+}

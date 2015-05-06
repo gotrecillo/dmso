@@ -1,0 +1,57 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styles/characterSheet.css"/>
+	<title>Hoja de personaje</title>
+</head>
+<body>
+	<div id="header">
+		<table id="headTable">
+			<tr>
+				<td colspan="3" rowspan="2"><img src="images/dndlogo.png"/></td>
+				<td colspan="3" class="bot"><input type="text" class="txt" id="name" /></td>
+				<td class="bot"><input type="text" class="txt" id="race" /></td>
+				<td class="bot"><input type="text" class="txt" id="class" /></td>
+			</tr>
+			<tr>
+				<td colspan="3" class="top">Nombre</td>
+				<td class="top">Raza</td>
+				<td class="top">Clase</td>
+			</tr>
+			<tr>	
+				<td><input class="btn" type="button" value="Estadísticas"></td>
+				<td><input class="btn" type="button" value="Habilidades"></td>
+				<td><input class="btn" type="button" value="Transfondo"></td>
+				<td><input class="btn" type="button" value="Clase"></td>
+				<td><input class="btn" type="button" value="Armas"></td>
+				<td><input class="btn" type="button" value="Hechizos"></td>
+				<td><input class="btn" type="button" value="Armadura"></td>
+				<td><input class="btn" type="button" value="Inventario"></td>
+			</tr>
+		</table>
+	</div>
+	<div id="stats">
+		<table id="statsTable">
+			<tr>
+				<td colspan="6">Estadísticas básicas</td>
+			</tr>
+			<tr>
+				<td>Valor</td>
+				<td></td>
+				<td>Mod</td>
+				<td>Proficiente</td>
+				<td>Bonus</td>
+				<td>Salvación</td>
+			</tr>
+			<tr>
+				<td><input class="txt" type="number" value="10" id="strScore" min="1" max="40"></td>
+				<td>FUE</td>
+				<td id="strMod"></td>
+				<td><input type="checkbox" id="strSave"></td>
+				<td id="strSave"></td>
+				<td><input class="btn" type="button" value="Salvación"></td>
+			</tr>
+		</table>	
+	</div>
+</body>
+</html>
