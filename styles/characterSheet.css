@@ -3,40 +3,174 @@ html, body{
 	width: 98%;
 }
 
+div#header, div#stats {
+	width: 80%;
+	margin: 0 auto;
+}
 
+input.txt, input.btn, input.number{
+	width: 100%;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.shadowed{
+	box-shadow: 3px 3px 1.5px #000000
+}
+
+/*Para poner una separacion entre algunas filas*/
+tr.emptyRow td{
+	height: 0.30em;
+}
+
+/*Celdas autocalculadas*/
+td.calculated {
+	border-radius: 3px;
+	border: solid 1px lightgrey;
+	background-color: #ccffcc;
+}
+
+/*Cabecera de fondo negro*/
+tr.blackRow td{
+	border-radius: 10px;
+	background-color: black;
+	color: white;
+	font-weight: bolder;
+}
+
+/*Cabecera de fondo gris*/
+tr.greyRow td{	
+	background-color: lightgrey;
+	color: grey;
+	font-style: italic;
+	font-weight: bolder;
+}
+
+tr.greyRow td:first-child{
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+tr.greyRow td:last-child{
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+/*Tabla superior*/
 table#headTable{
 	table-layout: fixed;
 	margin: 0 auto;
 	width: 100%;
 }
 
-table#statsTable{
-	table-layout: fixed;
-	width: 50%;
+table#headTable tr td.bot{
+	vertical-align: bottom;
+}
+
+table#headTable tr td.top{
+	vertical-align: top;
 	text-align: center;
 }
 
-div#header, div#stats {
-	width: 80%;
-	margin: 0 auto;
-}
 img{
 	width: 100%;
 }
 
-input.txt, input.btn{
-	width: 100%;
-}
 
-td { 
-	width: 14,28571428571429%; 
-}
-
-td.bot{
-	vertical-align: bottom;
-}
-
-td.top{
-	vertical-align: top;
+/*Estilo general de tablas*/
+table.bodyTables{
+	margin-top: 0.1em;
+	border-collapse: separate;
 	text-align: center;
+	float: left;
+	margin-left: 5%;
+}
+/*Tabla de estadisticas basicas*/
+table#statsTable{
+	table-layout: fixed;
+	width: 40%;
+	border-spacing: 0 0.1em;
+}
+
+input.scoreNumber{
+	border-radius: 7px;
+	width: 75%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+td.blackCell{
+	border-radius: 3px;
+	background-color: black;
+	color: white;
+	padding: 0.35em;
+	font-weight: bolder;
+}
+
+/*Tabla de vida y velocidad*/
+table#lifeAndSpeed{
+	table-layout: auto; 
+	width: 40%;
+	border-spacing: 0.2em 0.1em;
+}
+
+table#lifeAndSpeed tr td.verticalSeparator{
+	width: 4%;
+}
+
+table#lifeAndSpeed tr:last-child{
+	font-style: italic;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+td.verticalSeparator hr{
+	height: 3em;
+	width: 1;
+}
+
+/*Tabla de iniciativa*/
+table#initiativeTable{
+	table-layout: fixed; 
+	width: 18%;
+	border-spacing: 0.2em 0.1em;
+}
+
+table#initiativeTable tr:last-child{
+	font-style: italic;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+/*Tabla de armadura*/
+table#acTable{
+	table-layout: fixed;
+	margin-left: 1%;
+	width: 21%;
+	border-spacing: 0.2em 0.1em;
+}
+
+td.caText{
+	font-size: 1vw;
+	font-style: italic;
+	font-weight: bolder;
+}
+
+/*Tabla de nivel y experiencia*/
+table#expTable{
+	table-layout: fixed;
+	width: 40%;
+	border-spacing: 0.2em 0.1em;
+}
+
+table#expTable tr:last-child{
+	font-style: italic;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+/*Tabla de bonus y penalizaciones*/
+table#bonusTable{
+	clear: left;
+	width: 85%;
 }

@@ -6,12 +6,13 @@
 </head>
 <body>
 	<div id="header">
+		<!--Tabla superior-->
 		<table id="headTable">
 			<tr>
 				<td colspan="3" rowspan="2"><img src="images/dndlogo.png"/></td>
-				<td colspan="3" class="bot"><input type="text" class="txt" id="name" /></td>
-				<td class="bot"><input type="text" class="txt" id="race" /></td>
-				<td class="bot"><input type="text" class="txt" id="class" /></td>
+				<td colspan="3" class="bot"><input type="text" class="txt shadowed" id="name" /></td>
+				<td class="bot"><input type="text" class="txt shadowed" id="race" /></td>
+				<td class="bot"><input type="text" class="txt shadowed" id="class" /></td>
 			</tr>
 			<tr>
 				<td colspan="3" class="top">Nombre</td>
@@ -31,11 +32,15 @@
 		</table>
 	</div>
 	<div id="stats">
-		<table id="statsTable">
-			<tr>
+		<!--Tabla de estadisticas-->
+		<table class="bodyTables" id="statsTable">
+			<tr class="blackRow">
 				<td colspan="6">Estadísticas básicas</td>
 			</tr>
-			<tr>
+			<tr class="emptyRow">
+				<td colspan="6"></td>
+			</tr>
+			<tr class="greyRow">
 				<td>Valor</td>
 				<td></td>
 				<td>Mod</td>
@@ -43,15 +48,135 @@
 				<td>Bonus</td>
 				<td>Salvación</td>
 			</tr>
+			<tr class="emptyRow">
+				<td colspan="6"></td>
+			</tr>
 			<tr>
-				<td><input class="txt" type="number" value="10" id="strScore" min="1" max="40"></td>
-				<td>FUE</td>
-				<td id="strMod"></td>
+				<td><input class="scoreNumber" type="number" value="10" id="strScore" min="1" max="40"></td>
+				<td class="blackCell">FUE</td>
+				<td class="calculated" id="strMod"></td>
 				<td><input type="checkbox" id="strSave"></td>
-				<td id="strSave"></td>
+				<td class="calculated" id="strSaveMod"></td>
 				<td><input class="btn" type="button" value="Salvación"></td>
 			</tr>
-		</table>	
+			<tr>
+				<td><input class="scoreNumber" type="number" value="10" id="dexScore" min="1" max="40"></td>
+				<td class="blackCell">DES</td>
+				<td class="calculated" id="dexMod"></td>
+				<td><input type="checkbox" id="dexSave"></td>
+				<td class="calculated" id="dexSaveMod"></td>
+				<td><input class="btn" type="button" value="Salvación"></td>
+			</tr>
+			<tr>
+				<td><input class="scoreNumber" type="number" value="10" id="conScore" min="1" max="40"></td>
+				<td class="blackCell">CON</td>
+				<td class="calculated" id="conMod"></td>
+				<td><input type="checkbox" id="conSave"></td>
+				<td class="calculated" id="conSaveMod"></td>
+				<td><input class="btn" type="button" value="Salvación"></td>
+			</tr>
+			<tr>
+				<td><input class="scoreNumber" type="number" value="10" id="intScore" min="1" max="40"></td>
+				<td class="blackCell">INT</td>
+				<td class="calculated" id="intMod"></td>
+				<td><input type="checkbox" id="intSave"></td>
+				<td class="calculated" id="intSaveMod"></td>
+				<td><input class="btn" type="button" value="Salvación"></td>
+			</tr>
+			<tr>
+				<td><input class="scoreNumber" type="number" value="10" id="wisScore" min="1" max="40"></td>
+				<td class="blackCell">SAB</td>
+				<td class="calculated" id="wisMod"></td>
+				<td><input type="checkbox" id="wisSave"></td>
+				<td class="calculated" id="wisSaveMod"></td>
+				<td><input class="btn" type="button" value="Salvación"></td>
+			</tr>
+			<tr>
+				<td><input class="scoreNumber" type="number" value="10" id="chaScore" min="1" max="40"></td>
+				<td class="blackCell">CAR</td>
+				<td class="calculated" id="chaMod"></td>
+				<td><input type="checkbox" id="chaSave"></td>
+				<td class="calculated" id="chaSaveMod"></td>
+				<td><input class="btn" type="button" value="Salvación"></td>
+			</tr>
+		</table>
+
+		<!--Tabla vida y velocidad-->
+		<table class="bodyTables" id="lifeAndSpeed">
+			<tr class="blackRow">
+				<td colspan="6">Puntos de vida y velocidad</td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="6"></td>
+			</tr>
+			<tr>
+				<td><input class="txt shadowed" pattern="\d{1,4}"></td>
+				<td><input class="txt shadowed" pattern="\d{1,4}"></td>
+				<td rowspan="2" class="verticalSeparator"><hr></td>
+				<td><input class="txt shadowed" pattern="\d{1,4}"></td>
+				<td rowspan="2" class="verticalSeparator"><hr></td>
+				<td><input class="txt shadowed" pattern="\d{1,4}"></td>
+			</tr>
+			<tr>
+				<td>Actual</td>
+				<td>Maxima</td>
+				<td>Temporal</td>
+				<td>Velocidad</td>
+			</tr>
+		</table>
+		<!--Tabla de iniciativa-->
+		<table class="bodyTables" id="initiativeTable">
+			<tr class="blackRow">
+				<td colspan="3">Iniciativa</td>
+			</tr>
+			<tr>
+				<td><input class="number shadowed" type="number" value="0" id="initBonus" min="-20" max="20"></td>
+				<td class="calculated shadowed" id="initMod"></td>
+				<td rowspan="2"><input class="btn" type="button" value="Iniciativa"></td>
+			</tr>
+			<tr>
+				<td>Bonus</td>
+				<td>Total</td>
+			</tr>
+		</table>
+		<!--Tabla de armadura-->
+		<table class="bodyTables" id="acTable">
+			<tr class="blackRow">
+				<td colspan="2">Clase de Armadura</td>
+			</tr>
+			<tr>
+				<td class="caText">CA (armadura)</td>
+				<td class="calculated shadowed" id="AC"></td>
+			</tr>
+			<tr>
+				<td class="caText">CA (natural)</td>
+				<td class="calculated shadowed" id="ACnatural"></td>
+			</tr>
+		</table>
+		<!--Tabla de nivel y experiencia-->
+		<table class="bodyTables" id="expTable">
+			<tr class="blackRow">
+				<td colspan="4">Nivel y experiencia</td>
+			</tr>
+			<tr>
+				<td class="calculated shadowed" id="level"></td>
+				<td class="calculated shadowed" id="profBonus"></td>
+				<td><input class="number shadowed" type="number" min="0" max="360000"></td>
+				<td><input class="number shadowed" type="number" min="0" max="360000"></td>
+			</tr>
+			<tr>
+				<td>Nivel</td>
+				<td>Proficiencia</td>
+				<td>XP actual</td>
+				<td>XP para subir</td>
+			</tr>
+		</table>
+		<!--Tabla de bonuses-->
+		<table class="bodyTables" id="bonusTable">
+			<tr class="blackRow">
+				<td colspan="9">Bonus/Penalizaciones</td>
+			</tr>
+		</table>
 	</div>
 </body>
 </html>
