@@ -176,6 +176,120 @@
 			<tr class="blackRow">
 				<td colspan="9">Bonus/Penalizaciones</td>
 			</tr>
+			<tr>
+				<td class="instructions" colspan="9">Añade automaticamente el bonus a las tiradas correspondientes</td>
+			</tr>
+			<tr>
+				<td class="instructions" colspan="9">Se aceptara el formato &#x00b1;2, &#x00b1;2d2 &#x00b1;2, &#x00b1;2d2 &#x00b1;2d3, ....</td>
+			</tr>
+			<tr>
+				<td class="greyCell" colspan="4">Cuerpo a cuerpo</td>
+				<td rowspan="3" class="verticalSeparator"><hr></td>
+				<td class="greyCell" colspan="4">A distancia</td>
+			</tr>
+			<tr>
+				<td colspan="2"><input class="shadowed txt bonusInputs" id="meleeAtckBonus" type="text" pattern="((\+|-)[[:digit:]]*(d[[:digit:]]+)?)*" value="0"></td>
+				<td colspan="2"><input class="shadowed txt bonusInputs" id="meleeDmgBonus" type="text" pattern="((\+|-)[[:digit:]]*(d[[:digit:]]+)?)*" value="0"></td>
+				<td colspan="2"><input class="shadowed txt bonusInputs" id="rangedAtckBonus" type="text" pattern="((\+|-)[[:digit:]]*(d[[:digit:]]+)?)*" value="0"></td>
+				<td colspan="2"><input class="shadowed txt bonusInputs" id="rangedDmgBonus" type="text" pattern="((\+|-)[[:digit:]]*(d[[:digit:]]+)?)*" value="0"></td>
+			</tr>
+			<tr>
+				<td class="legendBonus" colspan="2">Ataque</td>
+				<td class="legendBonus" colspan="2">Daño</td>
+				<td class="legendBonus" colspan="2">Ataque</td>
+				<td class="legendBonus" colspan="2">Daño</td>
+			</tr>
+			<tr>
+				<td class="greyCell" colspan="9">Lanzamiento de hechizos</td>
+			</tr>
+			<tr>
+				<td colspan="3"><input class="shadowed txt bonusInputs" id="spellAtckBonus" type="text" pattern="((\+|-)[[:digit:]]*(d[[:digit:]]+)?)*" value="0"></td>
+				<td colspan="3"><input class="shadowed txt bonusInputs" id="spellDmgBonus" type="text" pattern="((\+|-)[[:digit:]]*(d[[:digit:]]+)?)*" value="0"></td>
+				<td colspan="3"><input class="shadowed txt bonusInputs" id="spellDCBonus" type="text" pattern="((\+|-)[[:digit:]]*(d[[:digit:]]+)?)*" value="0"></td>
+			</tr>
+			<tr>
+				<td class="legendBonus" colspan="3">Ataque</td>
+				<td class="legendBonus" colspan="3">Daño</td>
+				<td class="legendBonus" colspan="3">Salvación</td>
+			</tr>
+			<tr>
+				<td colspan="9" class="greyCell">Salvaciones y habilidades</td>
+			</tr>
+			<tr>
+				<td colspan="4"><input class="shadowed txt bonusInputs" id="genericSaveBonus" type="text" pattern="((\+|-)[[:digit:]]*(d[[:digit:]]+)?)*" value="0"></td>
+				<td rowspan="2" class="verticalSeparator"><hr></td>
+				<td colspan="4"><input class="shadowed txt bonusInputs" id="genericSkillBonus" type="text" pattern="((\+|-)[[:digit:]]*(d[[:digit:]]+)?)*" value="0"></td>
+			</tr>
+			<tr>
+				<td class="legendBonus" colspan="4">Salvación</td>
+				<td class="legendBonus" colspan="4">Habilidades</td>
+			</tr>
+		</table>
+		<!--Tabla de dados de golpe-->
+		<table class="bodyTables" id="hitDieTable">
+			<tr class="blackRow">
+				<td colspan="8">Dados de golpe</td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="8"></td>
+			</tr>
+			<tr class="greyRow">
+				<td colspan="4">Clases</td>
+				<td>Dado</td>
+				<td>Gastado</td>
+				<td>Total</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="4">Hechicero, Mago</td>
+				<td>d6</td>
+				<td><input class="number shadowed" id="d6DiceActual" type="number"></td>
+				<td id="d6DiceMax" class="calculated"></td>
+				<td><input class="btn" type="button" value="Usar"></td>
+			</tr>
+			<tr>
+				<td colspan="4">Bardo, Clérigo, Druida, Pícaro, Monje, Brujo</td>
+				<td>d8</td>
+				<td><input class="number shadowed" id="d8DiceActual" type="number"></td>
+				<td class="calculated" id="d8DiceMax"></td>
+				<td><input class="btn" type="button" value="Usar"></td>
+			</tr>
+			<tr>
+				<td colspan="4">Guerrero, Paladín, Explorador</td>
+				<td>d10</td>
+				<td><input class="number shadowed" id="d10DiceActual" type="number"></td>
+				<td class="calculated" id="d10DiceMax"></td>
+				<td><input class="btn" type="button" value="Usar"></td>
+			</tr>
+			<tr>
+				<td colspan="4">Bárbaro</td>
+				<td>d12</td>
+				<td><input class="number shadowed" id="d12DiceActual" type="number"></td>
+				<td class="calculated" id="d12DiceMax"></td>
+				<td><input class="btn" type="button" value="Usar"></td>
+			</tr>
+		</table>
+		<table class="bodyTables" id="deathInspiration">
+			<tr class="blackRow">
+				<td colspan="6">Muerte e inspiración</td>
+			</tr>
+			<tr>
+				<td class="greyCell">Inspiración</td>
+				<td class="greyCell" colspan="5">Salavión de muerte</td>
+			</tr>
+			<tr>
+				<td rowspan="2" id="inspirationStatus" class="noStatus">No</td>
+				<td>Aciertos:</td>
+				<td class="misteryRoll" id="deathSave1">???</td>
+				<td class="misteryRoll" id="deathSave2">???</td>
+				<td class="misteryRoll" id="deathSave3">???</td>
+				<td rowspan="2"><input class="btn" type="button" value="Muerte"></td>
+			</tr>
+			<tr>
+				<td>Fallos:</td>
+				<td class="misteryRoll" id="deathFail1">???</td>
+				<td class="misteryRoll" id="deathFail2">???</td>
+				<td class="misteryRoll" id="deathFail3">???</td></tr>
 		</table>
 	</div>
 </body>

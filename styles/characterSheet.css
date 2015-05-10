@@ -171,6 +171,67 @@ table#expTable tr:last-child{
 
 /*Tabla de bonus y penalizaciones*/
 table#bonusTable{
+	table-layout: fixed;
 	clear: left;
-	width: 85%;
+	width: 30%;
+}
+
+table#bonusTable tr td.instructions{
+	font-size: 0.75em;
+}
+
+table#bonusTable tr td.legendBonus{
+	font-style: italic;
+	font-weight: bolder;
+}
+
+table#bonusTable tr td.greyCell{
+	background-color: lightgrey;
+	color: grey;
+	border-radius: 10px;
+	font-style: italic;
+	font-weight: bolder;
+}
+
+
+table#bonusTable tr td input.bonusInputs{
+	width: 100%;
+	text-align: center;
+}
+
+/*Tabla de dados de golpe*/
+table#hitDieTable{
+	table-layout: fixed;
+	width: 50%;
+	border-spacing: 0 0.3em;
+}
+
+/*Tabla de muerte e inspiracion*/
+table#deathInspiration{
+	table-layout: fixed;
+	width: 50%;
+	border-spacing: 0 0.1em;
+}
+
+table#deathInspiration tr td.greyCell{
+	background-color: lightgrey;
+	color: grey;
+	border-radius: 10px;
+	font-style: italic;
+	font-weight: bolder;
+}
+
+table#deathInspiration tr td.misteryRoll{
+	border: 1px solid black;
+	border-radius: 10px;
+	font-weight: bolder;
+}
+
+table#deathInspiration tr td.noStatus{
+	background-color: darkred;
+	color: white;
+	font-weight: bolder;
+	font-style: italic;
+	border-radius: 10px;
+	vertical-align: center;
 }
