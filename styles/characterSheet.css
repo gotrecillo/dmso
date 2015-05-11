@@ -3,7 +3,7 @@ html, body{
 	width: 98%;
 }
 
-div#header, div#stats {
+div#header, div#stats, div#skills, div#background {
 	width: 80%;
 	margin: 0 auto;
 }
@@ -14,9 +14,23 @@ input.txt, input.btn, input.number{
 	border-radius: 5px;
 }
 
+/*Sombreado*/
 .shadowed{
 	box-shadow: 3px 3px 1.5px #000000
 }
+
+/*Selectores*/
+select {
+   border: 1px solid #111;
+   background: transparent;
+   width: 100%;
+   padding: 5px 35px 5px 5px;
+   border: 1px solid #ccc;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+    background: url(../images/dropdown.ico) 96% / 15% no-repeat #eee;
+} 
 
 /*Para poner una separacion entre algunas filas*/
 tr.emptyRow td{
@@ -30,6 +44,13 @@ td.calculated {
 	background-color: #ccffcc;
 }
 
+td.passive {
+	border-radius: 3px;
+	border: solid 1px lightgrey;
+	background-color: #A0DFDE;
+}
+
+
 /*Cabecera de fondo negro*/
 tr.blackRow td{
 	border-radius: 10px;
@@ -40,6 +61,7 @@ tr.blackRow td{
 
 /*Cabecera de fondo gris*/
 tr.greyRow td{	
+	text-align: center;
 	background-color: lightgrey;
 	color: grey;
 	font-style: italic;
@@ -47,11 +69,13 @@ tr.greyRow td{
 }
 
 tr.greyRow td:first-child{
+	padding-left: 0.6em;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
 
 tr.greyRow td:last-child{
+	padding-right: 0.6em;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
@@ -234,4 +258,59 @@ table#deathInspiration tr td.noStatus{
 	font-style: italic;
 	border-radius: 10px;
 	vertical-align: center;
+}
+
+/*Tabla de habilidades*/
+table#skillsTable{
+	table-layout: fixed;
+	width: 85%;
+	border-spacing: 0 0.1em;
+}
+
+table.innerTable{
+	width: 100%;
+	table-layout: fixed;
+	border-spacing: 0 0.1em;
+}
+
+.emptyCol{
+	width: 0.5em;
+}
+
+/*Tabla de apariencia*/
+table#appearanceTable{
+	table-layout: fixed;
+	width: 85%;
+	border-spacing: 0 0.1em;
+}
+
+.legend{
+	font-weight: bolder;
+	font-style: italic;
+}
+
+/*Tabla de transfondos*/
+table#backgroundTable{
+	table-layout: fixed;
+	width: 85%;
+	border-spacing: 0 0.1em;
+}
+
+textarea.backgroundTexts{
+	width: 100%;
+	border-radius: 6px;
+}
+
+/*Tabla de proficiencias de equipamientos*/
+table#equipamentProficienciesTable{
+	table-layout: fixed;
+	width: 85%;
+	border-spacing: 0 0.1em;
+}
+
+/*Tabla cualquier otra nota*/
+table#anyOtherNoteTable{
+	table-layout: fixed;
+	width: 85%;
+	border-spacing: 0 0.1em;
 }

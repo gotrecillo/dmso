@@ -31,6 +31,7 @@
 			</tr>
 		</table>
 	</div>
+	<!--Contenedor de estadisticas-->
 	<div id="stats">
 		<!--Tabla de estadisticas-->
 		<table class="bodyTables" id="statsTable">
@@ -289,7 +290,528 @@
 				<td>Fallos:</td>
 				<td class="misteryRoll" id="deathFail1">???</td>
 				<td class="misteryRoll" id="deathFail2">???</td>
-				<td class="misteryRoll" id="deathFail3">???</td></tr>
+				<td class="misteryRoll" id="deathFail3">???</td>
+			</tr>
+		</table>
+	</div>
+	<!--Contenedor de habilidades-->
+	<div id="skills">
+		<!--Tabla de habilidades-->
+		<table class="bodyTables" id="skillsTable">
+			<tr class="blackRow">
+				<td colspan="25">Habilidades</td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="25"></td>
+			</tr>
+			<tr>
+				<td colspan="12">
+					<table class="innerTable">
+						<tr class="greyRow">
+							<td colspan="4">Habilidad</td>
+							<td colspan="3">Proficiente</td>
+							<td colspan="2">Bonus</td>
+							<td>Total</td>
+							<td class="emptyCol"></td>
+							<td>Pasiva</td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Acrobacias(Des)</td>
+							<td colspan="3"><select id="acrobaticsProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="acrobaticsBonus" class="number" type="number" value="0"></td>
+							<td id="acrobaticsMod" class="calculated"></td>
+							<td></td>
+							<td id="acrobaticsPas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Manejo de animales(Sab)</td>
+							<td colspan="3"><select id="animalHandlingProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="animalHandlingBonus" class="number" type="number" value="0"></td>
+							<td id="animalHandlingMod" class="calculated"></td>
+							<td></td>
+							<td id="animalHandlingPas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Arcana(Int)</td>
+							<td colspan="3"><select id="arcanaProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="arcanaBonus" class="number" type="number" value="0"></td>
+							<td id="arcanaMod" class="calculated"></td>
+							<td></td>
+							<td id="arcanaPas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Atletismo(Fue)</td>
+							<td colspan="3"><select id="athleticsProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="athleticsBonus" class="number" type="number" value="0"></td>
+							<td id="athleticsMod" class="calculated"></td>
+							<td></td>
+							<td id="athleticsPas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Engaño(Car)</td>
+							<td colspan="3"><select id="deceptionProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="deceptionBonus" class="number" type="number" value="0"></td>
+							<td id="deceptionMod" class="calculated"></td>
+							<td></td>
+							<td id="deceptionPas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Historia(Int)</td>
+							<td colspan="3"><select id="historyProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="historyBonus" class="number" type="number" value="0"></td>
+							<td id="historyMod" class="calculated"></td>
+							<td></td>
+							<td id="historyPas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Perspicacia(Car)</td>
+							<td colspan="3"><select id="insightProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="insightBonus" class="number" type="number" value="0"></td>
+							<td id="insightMod" class="calculated"></td>
+							<td></td>
+							<td id="insightPas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Intimidación(Car)</td>
+							<td colspan="3"><select id="intimidationProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="intimidationBonus" class="number" type="number" value="0"></td>
+							<td id="intimidationMod" class="calculated"></td>
+							<td></td>
+							<td id="intimidationPas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Investigación(Car)</td>
+							<td colspan="3"><select id="investigationProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="investigationBonus" class="number" type="number" value="0"></td>
+							<td id="investigationMod" class="calculated"></td>
+							<td></td>
+							<td id="investigationPas" class="passive"></td>
+						</tr>
+					</table>
+				</td>
+				<td class="emptyCol"></td>
+				<td class="greyCell" colspan="12">
+					<table class="innerTable">
+						<tr class="greyRow">
+							<td colspan="4">Habilidad</td>
+							<td colspan="3">Proficiente</td>
+							<td colspan="2">Bonus</td>
+							<td>Total</td>
+							<td class="emptyCol"></td>
+							<td>Pasiva</td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Medicina(Sab)</td>
+							<td colspan="3"><select id="medicineProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="medicineBonus" class="number" type="number" value="0"></td>
+							<td id="medicineMod" class="calculated"></td>
+							<td></td>
+							<td id="medicinePas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Naturaleza(Int)</td>
+							<td colspan="3"><select id="natureProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="natureBonus" class="number" type="number" value="0"></td>
+							<td id="natureMod" class="calculated"></td>
+							<td></td>
+							<td id="naturePas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Percepción(Sab)</td>
+							<td colspan="3"><select id="perceptionProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="perceptionBonus" class="number" type="number" value="0"></td>
+							<td id="perceptionMod" class="calculated"></td>
+							<td></td>
+							<td id="perceptionPas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Interpretrar(Car)</td>
+							<td colspan="3"><select id="performanceProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="performanceBonus" class="number" type="number" value="0"></td>
+							<td id="performanceMod" class="calculated"></td>
+							<td></td>
+							<td id="performancePas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Persuasión(Car)</td>
+							<td colspan="3"><select id="persuasionProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="persuasionBonus" class="number" type="number" value="0"></td>
+							<td id="persuasionMod" class="calculated"></td>
+							<td></td>
+							<td id="persuasionPas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Religión(Int)</td>
+							<td colspan="3"><select id="religionProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="religionBonus" class="number" type="number" value="0"></td>
+							<td id="religionMod" class="calculated"></td>
+							<td></td>
+							<td id="religionPas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Juego de manos(Des)</td>
+							<td colspan="3"><select id="sleightOfHandProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="sleightOfHandBonus" class="number" type="number" value="0"></td>
+							<td id="sleightOfHandMod" class="calculated"></td>
+							<td></td>
+							<td id="sleightOfHandPas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Sigilo(Des)</td>
+							<td colspan="3"><select id="stealthProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="stealthBonus" class="number" type="number" value="0"></td>
+							<td id="stealthMod" class="calculated"></td>
+							<td></td>
+							<td id="stealthPas" class="passive"></td>
+						</tr>
+						<tr>
+							<td colspan="4"><input type="button" value="0"> Supervivencia(Sab)</td>
+							<td colspan="3"><select id="survivalProfType">
+											  <option value="0">No</option>
+	  										  <option value="1">Aprendíz de todo</option>
+	  										  <option value="2">Si</option>
+	  										  <option value="3">Pericia</option>
+											</select>
+							</td>
+							<td colspan="2"><input id="survivalBonus" class="number" type="number" value="0"></td>
+							<td id="survivalMod" class="calculated"></td>
+							<td></td>
+							<td id="survivalPas" class="passive"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="25"><hr/></td>
+			</tr>
+			<tr>
+				<td colspan="12">
+					<table class="innerTable">
+						<tr class="greyRow">
+							<td></td>
+							<td colspan="3">Habilidad</td>
+							<td colspan="2">Atributo</td>
+							<td colspan="3">Proficiente</td>
+							<td colspan="2">Bonus</td>
+							<td>Total</td>
+						</tr>
+						<tr>
+							<td><input type="button" value="0"></td>
+							<td colspan="3"><input id="customSkill1" class="txt" type="text" value="Personalizada 1"></td>
+							<td colspan="2"><select id="customSkill1Stat">
+									<option value="0">Nada</option>
+									<option value="1">FUE</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select>
+							</td>
+							<td colspan="3">
+								<select id="customSkill1ProfType">
+									<option value="0">No</option>
+	  								<option value="1">Aprendíz de todo</option>
+	  								<option value="2">Si</option>
+	  								<option value="3">Pericia</option>
+								</select>
+							</td>
+							<td colspan="2"><input id="customSkill1Bonus" class="number" type="number" value="0"></td>
+							<td id="customSkill1Mod" class="calculated"></td>
+						</tr>
+						<tr>
+							<td><input type="button" value="0"></td>
+							<td colspan="3"><input id="customSkill2" class="txt" type="text" value="Personalizada 2"></td>
+							<td colspan="2"><select id="customSkill2Stat">
+									<option value="0">Nada</option>
+									<option value="1">FUE</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select>
+							</td>
+							<td colspan="3">
+								<select id="customSkill2ProfType">
+									<option value="0">No</option>
+	  								<option value="1">Aprendíz de todo</option>
+	  								<option value="2">Si</option>
+	  								<option value="3">Pericia</option>
+								</select>
+							</td>
+							<td colspan="2"><input id="customSkill2Bonus" class="number" type="number" value="0"></td>
+							<td id="customSkill2Mod" class="calculated"></td>
+						</tr>
+					</table>
+				</td>
+				<td class="emptyCol"></td>
+				<td colspan="12">
+					<table class="innerTable">
+						<tr class="greyRow">
+							<td></td>
+							<td colspan="3">Habilidad</td>
+							<td colspan="2">Atributo</td>
+							<td colspan="3">Proficiente</td>
+							<td colspan="2">Bonus</td>
+							<td>Total</td>
+						</tr>
+						<tr>
+							<td><input type="button" value="0"></td>
+							<td colspan="3"><input id="customSkill3" class="txt" type="text" value="Personalizada 3"></td>
+							<td colspan="2"><select id="customSkill3Stat">
+									<option value="0">Nada</option>
+									<option value="1">FUE</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select>
+							</td>
+							<td colspan="3">
+								<select id="customSkill3ProfType">
+									<option value="0">No</option>
+	  								<option value="1">Aprendíz de todo</option>
+	  								<option value="2">Si</option>
+	  								<option value="3">Pericia</option>
+								</select>
+							</td>
+							<td colspan="2"><input id="customSkill3Bonus" class="number" type="number" value="0"></td>
+							<td id="customSkill3Mod" class="calculated"></td>
+						</tr>
+						<tr>
+							<td><input type="button" value="0"></td>
+							<td colspan="3"><input id="customSkill4" class="txt" type="text" value="Personalizada 4"></td>
+							<td colspan="2"><select id="customSkill4Stat">
+									<option value="0">Nada</option>
+									<option value="1">FUE</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select>
+							</td>
+							<td colspan="3">
+								<select id="customSkill4ProfType">
+									<option value="0">No</option>
+	  								<option value="1">Aprendíz de todo</option>
+	  								<option value="2">Si</option>
+	  								<option value="3">Pericia</option>
+								</select>
+							</td>
+							<td colspan="2"><input id="customSkill4Bonus" class="number" type="number" value="0"></td>
+							<td id="customSkill4Mod" class="calculated"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<!--Contenedor de transfondo-->
+	<div id="background">
+		<!--Tabla de apariencia-->
+		<table class="bodyTables" id="appearanceTable">
+			<tr class="blackRow">
+				<td colspan="7">Apariencia, visión, idiomas y alineamiento</td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="7"></td>
+			</tr>
+			<tr>
+				<td><input class="txt shadowed" id="gender" type="text"></td>
+				<td><input class="txt shadowed" id="age" type="text"></td>
+				<td><input class="txt shadowed" id="height" type="text"></td>
+				<td><input class="txt shadowed" id="weight" type="text"></td>
+				<td><input class="txt shadowed" id="eyes" type="text"></td>
+				<td><input class="txt shadowed" id="hair" type="text"></td>
+				<td><input class="txt shadowed" id="size" type="text"></td>
+			</tr>
+			<tr>
+				<td class="legend">Sexo</td>
+				<td class="legend">Edad</td>
+				<td class="legend">Altura</td>
+				<td class="legend">Peso</td>
+				<td class="legend">Ojos</td>
+				<td class="legend">Pelo</td>
+				<td class="legend">Tamaño</td>
+			</tr>
+			<tr>
+				<td colspan="2"><input class="txt shadowed" id="vision" type="text"></td>
+				<td colspan="3"><input class="txt shadowed" id="languages" type="text"></td>
+				<td colspan="2"><input class="txt shadowed" id="alignment" type="text"></td>
+			</tr>
+			<tr>
+				<td class="legend" colspan="2">Visión</td>
+				<td class="legend" colspan="3">Idiomas conocidos</td>
+				<td class="legend" colspan="2">Alineamiento</td>
+			</tr>
+		</table>
+		<!--Tabla de transfondo-->
+		<table class="bodyTables" id="backgroundTable">
+			<tr class="blackRow">
+				<td colspan="3">Transfondo, rasgos, ideales, lazos, fallos</td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="3"></td>
+			</tr>
+			<tr class="greyRow">
+				<td>Transfondo</td>
+				<td>Rasgos raciales</td>
+				<td>Rasgos personales</td>
+			</tr>
+			<tr>
+				<td><textarea class="backgroundTexts" rows="8" id="backgroundText"></textarea></td>
+				<td><textarea class="backgroundTexts" rows="8" id="racialTraitsText"></textarea></td>
+				<td><textarea class="backgroundTexts" rows="8" id="personalityTraitsText"></textarea></td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="3"></td>
+			</tr>
+			<tr class="greyRow">
+				<td>Ideales</td>
+				<td>Lazos</td>
+				<td>Fallos</td>
+			</tr>
+			<tr>
+				<td><textarea class="backgroundTexts" rows="8" id="idealsText"></textarea></td>
+				<td><textarea class="backgroundTexts" rows="8" id="bondsText"></textarea></td>
+				<td><textarea class="backgroundTexts" rows="8" id="flawsTraitText"></textarea></td>
+			</tr>
+		</table>
+		<!--Tabla de proficiencia con equipamiento-->
+		<table class="bodyTables" id="equipamentProficienciesTable">
+			<tr class="blackRow">
+				<td colspan="3">Proficiencia con equipamiento</td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="3"></td>
+			</tr>
+			<tr class="greyRow">
+				<td>Armaduras</td>
+				<td>Armas</td>
+				<td>Herramientas</td>
+			</tr>
+			<tr>
+				<td><textarea class="backgroundTexts" rows="8" id="armorurProficienciesText"></textarea></td>
+				<td><textarea class="backgroundTexts" rows="8" id="weaponProficienciesText"></textarea></td>
+				<td><textarea class="backgroundTexts" rows="8" id="toolProficienciesText"></textarea></td>
+			</tr>
+		</table>
+		<!--Tabla de cualquier otra nota-->
+		<table class="bodyTables" id="anyOtherNoteTable">
+			<tr class="blackRow">
+				<td colspan="3">Cualquier otra nota</td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="3"></td>
+			</tr>
+			<tr>
+				<td colspan="3"><textarea class="backgroundTexts" rows="8" id="otherNotesText"></textarea></td>
+			</tr>
 		</table>
 	</div>
 </body>
