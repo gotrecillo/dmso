@@ -3,10 +3,15 @@ html, body{
 	width: 98%;
 }
 
-div#header, div#stats, div#skills, div#background, div#classes, div#weapons {
+div#header, div#stats, div#skills, div#background, div#classes, div#weapons, div#armors {
 	width: 80%;
 	margin: 0 auto;
 }
+
+ div#stats, div#skills, div#background, div#classes, div#weapons, div#armors{
+ 	display: none;
+ }
+
 /*Lo que afecta a floateable y .floateable:after consigue que los div con elementos con float dentro tengan una altura definida*/
 .floatable{
 	overflow: hidden;
@@ -21,9 +26,61 @@ visibility:hidden;
 }
 
 input.txt, input.btn, input.number{
-	width: 100%;
+	width: 97%;
+	margin: 0 auto;
 	text-align: center;
 	border-radius: 5px;
+}
+
+/*Estilo de los botones principales*/
+.btnBlue {
+  background: #2097e6;
+  background-image: -webkit-linear-gradient(top, #2097e6, #297bad);
+  background-image: -moz-linear-gradient(top, #2097e6, #297bad);
+  background-image: -ms-linear-gradient(top, #2097e6, #297bad);
+  background-image: -o-linear-gradient(top, #2097e6, #297bad);
+  background-image: linear-gradient(to bottom, #2097e6, #297bad);
+  -webkit-border-radius: 24;
+  -moz-border-radius: 24;
+  border-radius: 24px;
+  width: 100%;
+  font-weight: bolder;
+  text-shadow: 3px 3px 2px #000000;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 3px;
+  text-decoration: none;
+}
+
+.btnBlue:hover {
+  background: #58b6f0;
+  background-image: -webkit-linear-gradient(top, #58b6f0, #55a1d4);
+  background-image: -moz-linear-gradient(top, #58b6f0, #55a1d4);
+  background-image: -ms-linear-gradient(top, #58b6f0, #55a1d4);
+  background-image: -o-linear-gradient(top, #58b6f0, #55a1d4);
+  background-image: linear-gradient(to bottom, #58b6f0, #55a1d4);
+  text-decoration: none;
+}
+
+.btnSelected {
+  background: #e6a420;
+  font-weight: bolder;
+  background-image: -webkit-linear-gradient(top, #e6a420, #a87a18);
+  background-image: -moz-linear-gradient(top, #e6a420, #a87a18);
+  background-image: -ms-linear-gradient(top, #e6a420, #a87a18);
+  background-image: -o-linear-gradient(top, #e6a420, #a87a18);
+  background-image: linear-gradient(to bottom, #e6a420, #a87a18);
+  -webkit-border-radius: 24;
+  -moz-border-radius: 24;
+  border-radius: 24px;
+  width: 100%;
+  text-shadow: 3px 3px 2px #000000;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #876b4c 3px;
+  text-decoration: none;
 }
 
 /*Sombreado*/
@@ -53,6 +110,7 @@ tr.emptyRow td{
 /*Celdas autocalculadas*/
 td.calculated {
 	border-radius: 3px;
+	font-weight: bolder;
 	border: solid 1px lightgrey;
 	background-color: #ccffcc;
 }
@@ -169,10 +227,7 @@ table#lifeAndSpeed tr:last-child{
 	vertical-align: top;
 }
 
-td.verticalSeparator hr{
-	height: 3em;
-	width: 1;
-}
+
 
 /*Tabla de iniciativa*/
 table#initiativeTable{
@@ -291,6 +346,7 @@ table.innerTable{
 
 .skillNames{
 	font-size: 0.7em;
+	text-align: left;
 }
 
 .emptyCol{
@@ -393,4 +449,22 @@ table#meleeWeapons{
 
 .smallFont{
 	font-size: 0.8em;
+}
+
+/*Tabla de armas a distancia*/
+table#rangedWeapons{
+	table-layout: fixed;
+	width: 85%;
+	border-spacing: 0 0.1em;
+}
+
+/*Tabla de armaduras*/
+table#armorTable{
+	table-layout: fixed;
+	width: 85%;
+	border-spacing: 0 0.1em;
+}
+
+#unarmoredType{
+    background: url(../images/dropdown.ico) 96% / 7% no-repeat #eee;
 }

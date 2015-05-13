@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
+	<script src="scripts/characterSheet.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/characterSheet.css"/>
 	<title>Hoja de personaje</title>
 </head>
@@ -9,7 +11,7 @@
 		<!--Tabla superior-->
 		<table id="headTable">
 			<tr>
-				<td colspan="3" rowspan="2"><img src="images/dndlogo.png"/></td>
+				<td colspan="3" rowspan="2"><img alt="noImage" src="images/dndlogo.png"/></td>
 				<td colspan="3" class="bot"><input type="text" class="txt shadowed" id="name" /></td>
 				<td class="bot"><input type="text" class="txt shadowed" id="race" /></td>
 				<td class="bot"><input type="text" class="txt shadowed" id="class" /></td>
@@ -20,19 +22,19 @@
 				<td class="top">Clase</td>
 			</tr>
 			<tr>	
-				<td><input class="btn" type="button" value="Estadísticas"></td>
-				<td><input class="btn" type="button" value="Habilidades"></td>
-				<td><input class="btn" type="button" value="Transfondo"></td>
-				<td><input class="btn" type="button" value="Clase"></td>
-				<td><input class="btn" type="button" value="Armas"></td>
-				<td><input class="btn" type="button" value="Hechizos"></td>
-				<td><input class="btn" type="button" value="Armadura"></td>
-				<td><input class="btn" type="button" value="Inventario"></td>
+				<td><input class="btnBlue" type="button" id="statsBtn" value="Estadísticas" onclick="changeClass(this)"></td>
+				<td><input class="btnBlue" type="button" id="skillsBtn" value="Habilidades" onclick="changeClass(this)"></td>
+				<td><input class="btnBlue" type="button" id="backgroundBtn" value="Transfondo" onclick="changeClass(this)"></td>
+				<td><input class="btnBlue" type="button" id="classesBtn" value="Clase" onclick="changeClass(this)"></td>
+				<td><input class="btnBlue" type="button" id="weaponsBtn" value="Armas" onclick="changeClass(this)"></td>
+				<td><input class="btnBlue" type="button" id="spellsBtn" value="Hechizos" onclick="changeClass(this)"></td>
+				<td><input class="btnBlue" type="button" id="armorBtn" value="Armadura" onclick="changeClass(this)"></td>
+				<td><input class="btnBlue" type="button" id="inventoryBtn" value="Inventario" onclick="changeClass(this)"></td>
 			</tr>
 		</table>
 	</div>
 	<!--Contenedor de estadisticas-->
-	<div id="stats" class="floatable">
+	<div id="stats" class="floatable hideable">
 		<!--Tabla de estadisticas-->
 		<table class="bodyTables" id="statsTable">
 			<tr class="blackRow">
@@ -113,9 +115,9 @@
 			<tr>
 				<td><input class="txt shadowed" pattern="\d{1,4}"></td>
 				<td><input class="txt shadowed" pattern="\d{1,4}"></td>
-				<td rowspan="2" class="verticalSeparator"><hr></td>
+				<td rowspan="2" class="verticalSeparator"></td>
 				<td><input class="txt shadowed" pattern="\d{1,4}"></td>
-				<td rowspan="2" class="verticalSeparator"><hr></td>
+				<td rowspan="2" class="verticalSeparator"></td>
 				<td><input class="txt shadowed" pattern="\d{1,4}"></td>
 			</tr>
 			<tr>
@@ -185,7 +187,7 @@
 			</tr>
 			<tr>
 				<td class="greyCell" colspan="4">Cuerpo a cuerpo</td>
-				<td rowspan="3" class="verticalSeparator"><hr></td>
+				<td rowspan="3" class="verticalSeparator"></td>
 				<td class="greyCell" colspan="4">A distancia</td>
 			</tr>
 			<tr>
@@ -218,7 +220,7 @@
 			</tr>
 			<tr>
 				<td colspan="4"><input class="shadowed txt bonusInputs" id="genericSaveBonus" type="text" pattern="((\+|-)[[:digit:]]*(d[[:digit:]]+)?)*" value="0"></td>
-				<td rowspan="2" class="verticalSeparator"><hr></td>
+				<td rowspan="2" class="verticalSeparator"></td>
 				<td colspan="4"><input class="shadowed txt bonusInputs" id="genericSkillBonus" type="text" pattern="((\+|-)[[:digit:]]*(d[[:digit:]]+)?)*" value="0"></td>
 			</tr>
 			<tr>
@@ -296,7 +298,7 @@
 		</table>
 	</div>
 	<!--Contenedor de habilidades-->
-	<div id="skills" class="floatable">
+	<div id="skills" class="floatable hideable">
 		<!--Tabla de habilidades-->
 		<table class="bodyTables" id="skillsTable">
 			<tr class="blackRow">
@@ -317,7 +319,7 @@
 							<td>Pasiva</td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Acrobacias(Des)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Acrobacias(Des)</td>
 							<td colspan="3"><select id="acrobaticsProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -331,7 +333,7 @@
 							<td id="acrobaticsPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Manejo de animales(Sab)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Manejo de animales(Sab)</td>
 							<td colspan="3"><select id="animalHandlingProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -345,7 +347,7 @@
 							<td id="animalHandlingPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Arcana(Int)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Arcana(Int)</td>
 							<td colspan="3"><select id="arcanaProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -359,7 +361,7 @@
 							<td id="arcanaPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Atletismo(Fue)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Atletismo(Fue)</td>
 							<td colspan="3"><select id="athleticsProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -373,7 +375,7 @@
 							<td id="athleticsPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Engaño(Car)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Engaño(Car)</td>
 							<td colspan="3"><select id="deceptionProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -387,7 +389,7 @@
 							<td id="deceptionPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Historia(Int)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Historia(Int)</td>
 							<td colspan="3"><select id="historyProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -401,7 +403,7 @@
 							<td id="historyPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Perspicacia(Car)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Perspicacia(Car)</td>
 							<td colspan="3"><select id="insightProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -415,7 +417,7 @@
 							<td id="insightPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Intimidación(Car)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Intimidación(Car)</td>
 							<td colspan="3"><select id="intimidationProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -429,7 +431,7 @@
 							<td id="intimidationPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Investigación(Car)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Investigación(Car)</td>
 							<td colspan="3"><select id="investigationProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -445,7 +447,7 @@
 					</table>
 				</td>
 				<td class="emptyCol"></td>
-				<td class="greyCell" colspan="12">
+				<td colspan="12">
 					<table class="innerTable">
 						<tr class="greyRow">
 							<td colspan="4">Habilidad</td>
@@ -456,7 +458,7 @@
 							<td>Pasiva</td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Medicina(Sab)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Medicina(Sab)</td>
 							<td colspan="3"><select id="medicineProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -470,7 +472,7 @@
 							<td id="medicinePas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Naturaleza(Int)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Naturaleza(Int)</td>
 							<td colspan="3"><select id="natureProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -484,7 +486,7 @@
 							<td id="naturePas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Percepción(Sab)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Percepción(Sab)</td>
 							<td colspan="3"><select id="perceptionProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -498,7 +500,7 @@
 							<td id="perceptionPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Interpretrar(Car)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Interpretrar(Car)</td>
 							<td colspan="3"><select id="performanceProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -512,7 +514,7 @@
 							<td id="performancePas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Persuasión(Car)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Persuasión(Car)</td>
 							<td colspan="3"><select id="persuasionProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -526,7 +528,7 @@
 							<td id="persuasionPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Religión(Int)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Religión(Int)</td>
 							<td colspan="3"><select id="religionProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -540,7 +542,7 @@
 							<td id="religionPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Juego de manos(Des)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Juego de manos(Des)</td>
 							<td colspan="3"><select id="sleightOfHandProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -554,7 +556,7 @@
 							<td id="sleightOfHandPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Sigilo(Des)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Sigilo(Des)</td>
 							<td colspan="3"><select id="stealthProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -568,7 +570,7 @@
 							<td id="stealthPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="skillNames"><input type="button" value="0"> Supervivencia(Sab)</td>
+							<td colspan="4" class="skillNames"><input type="button" class="rollBtn" value="0"> Supervivencia(Sab)</td>
 							<td colspan="3"><select id="survivalProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -713,7 +715,7 @@
 		</table>
 	</div>
 	<!--Contenedor de transfondo-->
-	<div id="background" class="floatable">
+	<div id="background" class="floatable hideable">
 		<!--Tabla de apariencia-->
 		<table class="bodyTables" id="appearanceTable">
 			<tr class="blackRow">
@@ -796,7 +798,7 @@
 				<td>Armas</td>
 				<td>Herramientas</td>
 			</tr>
-			<tr> shadowed
+			<tr> 
 				<td><textarea class="backgroundTexts shadowed" rows="8" id="armorurProficienciesText"></textarea></td>
 				<td><textarea class="backgroundTexts shadowed" rows="8" id="weaponProficienciesText"></textarea></td>
 				<td><textarea class="backgroundTexts shadowed" rows="8" id="toolProficienciesText"></textarea></td>
@@ -816,7 +818,7 @@
 		</table>
 	</div>
 	<!--Contenedor de clase-->
-	<div id="classes" class="floatable">
+	<div id="classes" class="floatable hideable">
 		<!--Tabla de niveles de clases-->
 		<table class="bodyTables" id="classLevels">
 			<tr class="blackRow">
@@ -827,17 +829,17 @@
 			</tr>
 			<tr>
 				<td colspan="2" class="rightText">Bárbaro&nbsp; </td>
-				<td><input id="barbarianLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td><input id="barbarianLevels" class="number shadowed classLevel" type="number" min="0" value="0" onchange="calculateLevel()"></td>
 				<td colspan="2" class="rightText">Bardo&nbsp; </td>
-				<td><input id="bardLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td><input id="bardLevels" class="number shadowed classLevel" type="number" min="0" value="0" onchange="calculateLevel()"></td>
 				<td colspan="2" class="rightText">Clérigo&nbsp; </td>
-				<td><input id="clericLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td><input id="clericLevels" class="number shadowed classLevel" type="number" min="0" value="0" onchange="calculateLevel()"></td>
 				<td colspan="2" class="rightText">Druida&nbsp; </td>
-				<td><input id="druidLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td><input id="druidLevels" class="number shadowed classLevel" type="number" min="0" value="0" onchange="calculateLevel()"></td>
 				<td colspan="2" class="rightText">Guerrero&nbsp; </td>
-				<td><input id="fighterLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td><input id="fighterLevels" class="number shadowed classLevel" type="number" min="0" value="0" onchange="calculateLevel()"></td>
 				<td colspan="2" class="rightText">Monje&nbsp; </td>
-				<td><input id="monkLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td><input id="monkLevels" class="number shadowed classLevel" type="number" min="0" value="0" onchange="calculateLevel()"></td>
 				<td></td>
 			</tr>
 			<tr class="emptyRow">
@@ -845,17 +847,17 @@
 			</tr>
 			<tr>
 				<td colspan="2" class="rightText">Paladín&nbsp; </td>
-				<td><input id="paladinLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td><input id="paladinLevels" class="number shadowed classLevel" type="number" min="0" value="0" onchange="calculateLevel()"></td>
 				<td colspan="2" class="rightText">Explorador&nbsp; </td>
-				<td><input id="rangerLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td><input id="rangerLevels" class="number shadowed classLevel" type="number" min="0" value="0" onchange="calculateLevel()"></td>
 				<td colspan="2" class="rightText">Pícaro&nbsp; </td>
-				<td><input id="rogueLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td><input id="rogueLevels" class="number shadowed classLevel" type="number" min="0" value="0" onchange="calculateLevel()"></td>
 				<td colspan="2" class="rightText">Hechicero&nbsp; </td>
-				<td><input id="sorcererLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td><input id="sorcererLevels" class="number shadowed classLevel" type="number" min="0" value="0" onchange="calculateLevel()"></td>
 				<td colspan="2" class="rightText">Mago&nbsp; </td>
-				<td><input id="mageLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td><input id="mageLevels" class="number shadowed classLevel" type="number" min="0" value="0" onchange="calculateLevel()"></td>
 				<td colspan="2" class="rightText">Brujo&nbsp; </td>
-				<td><input id="warlockLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td><input id="warlockLevels" class="number shadowed classLevel" type="number" min="0" value="0" onchange="calculateLevel()"></td>
 				<td></td>
 			</tr>
 			<tr class="emptyRow">
@@ -884,19 +886,19 @@
 		<!--Lista de acciones-->
 		<div id="classActions" class="floatable">
 			<h4>Acciones y dotes</h4>
-			<div id="leftButton"><input type="button" type="btn" value="+Añadir"></div>
-			<div id="rightButton"><input type="button" type="btn" value="Modificar"></div>
+			<div id="leftButton"><input type="button" class="btn" value="+Añadir"></div>
+			<div id="rightButton"><input type="button" class="btn" value="Modificar"></div>
 		</div>
 	</div>
 	<!--Contenedor de armas-->
-	<div id="weapons" class="floatable">
+	<div id="weapons" class="floatable hideable">
 		<!--Tabla de armas a melee-->
 		<table id="meleeWeapons" class="bodyTables">
 			<tr class="blackRow">
 				<td colspan="102">Armas cuerpo a cuerpo</td>
 			</tr>
 			<tr class="emptyRow">
-				<td></td>
+				<td colspan="102"></td>
 			</tr>
 			<tr class="greyRow smallFont">
 				<td colspan="4">Prof?</td>
@@ -1043,6 +1045,324 @@
 				<td colspan="10"><input type="text" class="txt" id="meleeWeapon6critDmg"></td>
 				<td colspan="8"><input type="number" class="number" id="meleeWeapon6critRange" min="1" max="20" value="20"></td>
 				<td colspan="6"><input type="button" class="btn" value="Atacar"></td>
+			</tr>
+		</table>
+		<!--Tabla de armas a distancia-->
+		<table id="rangedWeapons" class="bodyTables">
+			<tr class="blackRow">
+				<td colspan="102">Armas a distancia</td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="102"></td>
+			</tr>
+			<tr class="greyRow smallFont">
+				<td colspan="4">Prof?</td>
+				<td colspan="4">Munición</td>
+				<td colspan="21">Arma</td>
+				<td colspan="10">Atributo</td>
+				<td colspan="8">Bonus</td>
+				<td colspan="5">Golpe</td>
+				<td colspan="8">Daño</td>
+				<td colspan="5">Daño Bonus</td>
+				<td colspan="13">Tipo de daño</td>
+				<td colspan="10">Daño crítico</td>
+				<td colspan="8">Rango crítico</td>
+				<td colspan="6">Ataque</td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="checkbox" checked="checked" id="rangedWeapon1prof"></td>
+				<td colspan="4"><input type="number" class="number" id="rangedWeapon1Ammo" min="0" max="999" value="0"></td>
+				<td colspan="21"><input type="text" class="txt" id="rangedWeapon1name"></td>
+				<td colspan="10"><select id="rangedWeapon1atr">
+									<option value="0">FUE</option>
+									<option value="1">Sutileza</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select></td>
+				<td colspan="8"><input type="number" class="number" id="rangedWeapon1hitBonus" min="-40" max="40" value="0"></td>
+				<td colspan="5" class="calculated" id="rangedWeapon1hit"></td>
+				<td colspan="8"><input type="text" class="txt" id="rangedWeapon1dmg"></td>
+				<td colspan="5" class="calculated" id="rangedWeapon1dmgBonus"></td>
+				<td colspan="13"><input type="text" class="txt" id="rangedWeapon1dmgType"></td>
+				<td colspan="10"><input type="text" class="txt" id="rangedWeapon1critDmg"></td>
+				<td colspan="8"><input type="number" class="number" id="rangedWeapon1critRange" min="1" max="20" value="20"></td>
+				<td colspan="6"><input type="button" class="btn" value="Atacar"></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="checkbox" checked="checked" id="rangedWeapon2prof"></td>
+				<td colspan="4"><input type="number" class="number" id="rangedWeapon2Ammo" min="0" max="999" value="0"></td>
+				<td colspan="21"><input type="text" class="txt" id="rangedWeapon2name"></td>
+				<td colspan="10"><select id="rangedWeapon2atr">
+									<option value="0">FUE</option>
+									<option value="1">Sutileza</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select></td>
+				<td colspan="8"><input type="number" class="number" id="rangedWeapon2hitBonus" min="-40" max="40" value="0"></td>
+				<td colspan="5" class="calculated" id="rangedWeapon2hit"></td>
+				<td colspan="8"><input type="text" class="txt" id="rangedWeapon2dmg"></td>
+				<td colspan="5" class="calculated" id="rangedWeapon2dmgBonus"></td>
+				<td colspan="13"><input type="text" class="txt" id="rangedWeapon2dmgType"></td>
+				<td colspan="10"><input type="text" class="txt" id="rangedWeapon2critDmg"></td>
+				<td colspan="8"><input type="number" class="number" id="rangedWeapon2critRange" min="1" max="20" value="20"></td>
+				<td colspan="6"><input type="button" class="btn" value="Atacar"></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="checkbox" checked="checked" id="rangedWeapon3prof"></td>
+				<td colspan="4"><input type="number" class="number" id="rangedWeapon3Ammo" min="0" max="999" value="0"></td>
+				<td colspan="21"><input type="text" class="txt" id="rangedWeapon3name"></td>
+				<td colspan="10"><select id="rangedWeapon3atr">
+									<option value="0">FUE</option>
+									<option value="1">Sutileza</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select></td>
+				<td colspan="8"><input type="number" class="number" id="rangedWeapon3hitBonus" min="-40" max="40" value="0"></td>
+				<td colspan="5" class="calculated" id="rangedWeapon3hit"></td>
+				<td colspan="8"><input type="text" class="txt" id="rangedWeapon3dmg"></td>
+				<td colspan="5" class="calculated" id="rangedWeapon3dmgBonus"></td>
+				<td colspan="13"><input type="text" class="txt" id="rangedWeapon3dmgType"></td>
+				<td colspan="10"><input type="text" class="txt" id="rangedWeapon3critDmg"></td>
+				<td colspan="8"><input type="number" class="number" id="rangedWeapon3critRange" min="1" max="20" value="20"></td>
+				<td colspan="6"><input type="button" class="btn" value="Atacar"></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="checkbox" checked="checked" id="rangedWeapon4prof"></td>
+				<td colspan="4"><input type="number" class="number" id="rangedWeapon4Ammo" min="0" max="999" value="0"></td>
+				<td colspan="21"><input type="text" class="txt" id="rangedWeapon4name"></td>
+				<td colspan="10"><select id="rangedWeapon4atr">
+									<option value="0">FUE</option>
+									<option value="1">Sutileza</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select></td>
+				<td colspan="8"><input type="number" class="number" id="rangedWeapon4hitBonus" min="-40" max="40" value="0"></td>
+				<td colspan="5" class="calculated" id="rangedWeapon4hit"></td>
+				<td colspan="8"><input type="text" class="txt" id="rangedWeapon4dmg"></td>
+				<td colspan="5" class="calculated" id="rangedWeapon4dmgBonus"></td>
+				<td colspan="13"><input type="text" class="txt" id="rangedWeapon4dmgType"></td>
+				<td colspan="10"><input type="text" class="txt" id="rangedWeapon4critDmg"></td>
+				<td colspan="8"><input type="number" class="number" id="rangedWeapon4critRange" min="1" max="20" value="20"></td>
+				<td colspan="6"><input type="button" class="btn" value="Atacar"></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="checkbox" checked="checked" id="rangedWeapon5prof"></td>
+				<td colspan="4"><input type="number" class="number" id="rangedWeapon5Ammo" min="0" max="999" value="0"></td>
+				<td colspan="21"><input type="text" class="txt" id="rangedWeapon5name"></td>
+				<td colspan="10"><select id="rangedWeapon5atr">
+									<option value="0">FUE</option>
+									<option value="1">Sutileza</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select></td>
+				<td colspan="8"><input type="number" class="number" id="rangedWeapon5hitBonus" min="-40" max="40" value="0"></td>
+				<td colspan="5" class="calculated" id="rangedWeapon5hit"></td>
+				<td colspan="8"><input type="text" class="txt" id="rangedWeapon5dmg"></td>
+				<td colspan="5" class="calculated" id="rangedWeapon5dmgBonus"></td>
+				<td colspan="13"><input type="text" class="txt" id="rangedWeapon5dmgType"></td>
+				<td colspan="10"><input type="text" class="txt" id="rangedWeapon5critDmg"></td>
+				<td colspan="8"><input type="number" class="number" id="rangedWeapon5critRange" min="1" max="20" value="20"></td>
+				<td colspan="6"><input type="button" class="btn" value="Atacar"></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="checkbox" checked="checked" id="rangedWeapon6prof"></td>
+				<td colspan="4"><input type="number" class="number" id="rangedWeapon6Ammo" min="0" max="999" value="0"></td>
+				<td colspan="21"><input type="text" class="txt" id="rangedWeapon6name"></td>
+				<td colspan="10"><select id="rangedWeapon6atr">
+									<option value="0">FUE</option>
+									<option value="1">Sutileza</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select></td>
+				<td colspan="8"><input type="number" class="number" id="rangedWeapon6hitBonus" min="-40" max="40" value="0"></td>
+				<td colspan="5" class="calculated" id="rangedWeapon6hit"></td>
+				<td colspan="8"><input type="text" class="txt" id="rangedWeapon6dmg"></td>
+				<td colspan="5" class="calculated" id="rangedWeapon6dmgBonus"></td>
+				<td colspan="13"><input type="text" class="txt" id="rangedWeapon6dmgType"></td>
+				<td colspan="10"><input type="text" class="txt" id="rangedWeapon6critDmg"></td>
+				<td colspan="8"><input type="number" class="number" id="rangedWeapon6critRange" min="1" max="20" value="20"></td>
+				<td colspan="6"><input type="button" class="btn" value="Atacar"></td>
+			</tr>
+		</table>
+	</div>
+	<!--Contenedor de armaduras-->
+	<div class="floatable hideable" id="armors">
+		<!--Tabla de armaduras-->
+		<table class="bodyTables" id="armorTable">
+			<tr class="blackRow">
+				<td colspan="100">Clase de armadura</td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="100"></td>
+			</tr>
+			<tr>
+				<td colspan="100">Añade el equipo o efectos que den un beneficio a la Clase de Armadura (CA). Esto incluye armaduras, escudos y los elementos mágicos o hechizos.</td>
+			</tr>
+			<tr>
+				<td colspan="45" class="rightText">Bonus sin armadura:&nbsp; </td>
+				<td colspan="25"><select id="unarmoredType">
+									<option value="0">Ninguna</option>
+									<option value="1">Bárbaro sin armadura</option>
+									<option value="2">Monje sin armadura</option>		
+									<option value="3">Resistencia dracónica(Arquetipo de hechicero)</option>
+								</select></td>
+				<td colspan="30"></td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="100"></td>
+			</tr>
+			<tr class="greyRow">
+				<td colspan="10">Puesta</td>
+				<td colspan="10">Sin armadura</td>
+				<td colspan="24">Nombre</td>
+				<td colspan="10">CA Base</td>
+				<td colspan="23">Tipo</td>
+				<td colspan="13">Bonus</td>
+				<td colspan="10">CA Total</td>
+			</tr>
+			<tr>
+				<td colspan="10"><input type="checkbox" id="armor1worn" checked="checked"></td>
+				<td colspan="10"><input type="checkbox" id="armor1unarmored"></td>
+				<td colspan="24"><input type="text" class="txt" id="armor1name"></td>
+				<td colspan="10"><input type="number" class="number" id="armor1base" min="-20" max="20" value="0"></td>
+				<td colspan="23"><select id="armor1Type">
+									<option value="0">---</option>
+									<option value="1">Ligera</option>
+									<option value="2">Media</option>		
+									<option value="3">Pesada</option>
+								</select></td>
+				<td colspan="13"><input type="number" class="number" id="armor1bonus" min="-20" max="20" value="0"></td>
+				<td colspan="10" class="calculated" id="armor1totalAc"></td>
+			</tr>
+			<tr>
+				<td colspan="10"><input type="checkbox" id="armor2worn" checked="checked"></td>
+				<td colspan="10"><input type="checkbox" id="armor2unarmored"></td>
+				<td colspan="24"><input type="text" class="txt" id="armor2name"></td>
+				<td colspan="10"><input type="number" class="number" id="armor2base" min="-20" max="20" value="0"></td>
+				<td colspan="23"><select id="armor2Type">
+									<option value="0">---</option>
+									<option value="1">Ligera</option>
+									<option value="2">Media</option>		
+									<option value="3">Pesada</option>
+								</select></td>
+				<td colspan="13"><input type="number" class="number" id="armor2bonus" min="-20" max="20" value="0"></td>
+				<td colspan="10" class="calculated" id="armor2totalAc"></td>
+			</tr>
+			<tr>
+				<td colspan="10"><input type="checkbox" id="armor3worn" checked="checked"></td>
+				<td colspan="10"><input type="checkbox" id="armor3unarmored"></td>
+				<td colspan="24"><input type="text" class="txt" id="armor3name"></td>
+				<td colspan="10"><input type="number" class="number" id="armor3base" min="-20" max="20" value="0"></td>
+				<td colspan="23"><select id="armor3Type">
+									<option value="0">---</option>
+									<option value="1">Ligera</option>
+									<option value="2">Media</option>		
+									<option value="3">Pesada</option>
+								</select></td>
+				<td colspan="13"><input type="number" class="number" id="armor3bonus" min="-20" max="20" value="0"></td>
+				<td colspan="10" class="calculated" id="armor3totalAc"></td>
+			</tr>
+			<tr>
+				<td colspan="10"><input type="checkbox" id="armor4worn" checked="checked"></td>
+				<td colspan="10"><input type="checkbox" id="armor4unarmored"></td>
+				<td colspan="24"><input type="text" class="txt" id="armor4name"></td>
+				<td colspan="10"><input type="number" class="number" id="armor4base" min="-20" max="20" value="0"></td>
+				<td colspan="23"><select id="armor4Type">
+									<option value="0">---</option>
+									<option value="1">Ligera</option>
+									<option value="2">Media</option>		
+									<option value="3">Pesada</option>
+								</select></td>
+				<td colspan="13"><input type="number" class="number" id="armor4bonus" min="-20" max="20" value="0"></td>
+				<td colspan="10" class="calculated" id="armor4totalAc"></td>
+			</tr>
+			<tr>
+				<td colspan="10"><input type="checkbox" id="armor5worn" checked="checked"></td>
+				<td colspan="10"><input type="checkbox" id="armor5unarmored"></td>
+				<td colspan="24"><input type="text" class="txt" id="armor5name"></td>
+				<td colspan="10"><input type="number" class="number" id="armor5base" min="-20" max="20" value="0"></td>
+				<td colspan="23"><select id="armor5Type">
+									<option value="0">---</option>
+									<option value="1">Ligera</option>
+									<option value="2">Media</option>		
+									<option value="3">Pesada</option>
+								</select></td>
+				<td colspan="13"><input type="number" class="number" id="armor5bonus" min="-20" max="20" value="0"></td>
+				<td colspan="10" class="calculated" id="armor5totalAc"></td>
+			</tr>
+			<tr>
+				<td colspan="10"><input type="checkbox" id="armor6worn" checked="checked"></td>
+				<td colspan="10"><input type="checkbox" id="armor6unarmored"></td>
+				<td colspan="24"><input type="text" class="txt" id="armor6name"></td>
+				<td colspan="10"><input type="number" class="number" id="armor6base" min="-20" max="20" value="0"></td>
+				<td colspan="23"><select id="armor6Type">
+									<option value="0">---</option>
+									<option value="1">Ligera</option>
+									<option value="2">Media</option>		
+									<option value="3">Pesada</option>
+								</select></td>
+				<td colspan="13"><input type="number" class="number" id="armor6bonus" min="-20" max="20" value="0"></td>
+				<td colspan="10" class="calculated" id="armor6totalAc"></td>
+			</tr>
+			<tr>
+				<td colspan="10"><input type="checkbox" id="armor7worn" checked="checked"></td>
+				<td colspan="10"><input type="checkbox" id="armor7unarmored"></td>
+				<td colspan="24"><input type="text" class="txt" id="armor7name"></td>
+				<td colspan="10"><input type="number" class="number" id="armor7base" min="-20" max="20" value="0"></td>
+				<td colspan="23"><select id="armor7Type">
+									<option value="0">---</option>
+									<option value="1">Ligera</option>
+									<option value="2">Media</option>		
+									<option value="3">Pesada</option>
+								</select></td>
+				<td colspan="13"><input type="number" class="number" id="armor7bonus" min="-20" max="20" value="0"></td>
+				<td colspan="10" class="calculated" id="armor7totalAc"></td>
+			</tr>
+			<tr>
+				<td colspan="10"><input type="checkbox" id="armor8worn" checked="checked"></td>
+				<td colspan="10"><input type="checkbox" id="armor8unarmored"></td>
+				<td colspan="24"><input type="text" class="txt" id="armor8name"></td>
+				<td colspan="10"><input type="number" class="number" id="armor8base" min="-20" max="20" value="0"></td>
+				<td colspan="23"><select id="armor8Type">
+									<option value="0">---</option>
+									<option value="1">Ligera</option>
+									<option value="2">Media</option>		
+									<option value="3">Pesada</option>
+								</select></td>
+				<td colspan="13"><input type="number" class="number" id="armor8bonus" min="-20" max="20" value="0"></td>
+				<td colspan="10" class="calculated" id="armor8totalAc"></td>
+			</tr>
+			<tr>
+				<td colspan="10"><input type="checkbox" id="armor9worn" checked="checked"></td>
+				<td colspan="10"><input type="checkbox" id="armor9unarmored"></td>
+				<td colspan="24"><input type="text" class="txt" id="armor9name"></td>
+				<td colspan="10"><input type="number" class="number" id="armor9base" min="-20" max="20" value="0"></td>
+				<td colspan="23"><select id="armor9Type">
+									<option value="0">---</option>
+									<option value="1">Ligera</option>
+									<option value="2">Media</option>		
+									<option value="3">Pesada</option>
+								</select></td>
+				<td colspan="13"><input type="number" class="number" id="armor9bonus" min="-20" max="20" value="0"></td>
+				<td colspan="10" class="calculated" id="armor9totalAc"></td>
 			</tr>
 		</table>
 	</div>
