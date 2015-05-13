@@ -32,7 +32,7 @@
 		</table>
 	</div>
 	<!--Contenedor de estadisticas-->
-	<div id="stats">
+	<div id="stats" class="floatable">
 		<!--Tabla de estadisticas-->
 		<table class="bodyTables" id="statsTable">
 			<tr class="blackRow">
@@ -143,14 +143,14 @@
 		<!--Tabla de armadura-->
 		<table class="bodyTables" id="acTable">
 			<tr class="blackRow">
-				<td colspan="2">Clase de Armadura</td>
+				<td colspan="5">Clase de Armadura</td>
 			</tr>
 			<tr>
-				<td class="caText">CA (armadura)</td>
+				<td colspan="4" class="caText">CA (armadura)</td>
 				<td class="calculated shadowed" id="AC"></td>
 			</tr>
 			<tr>
-				<td class="caText">CA (natural)</td>
+				<td colspan="4" class="caText">CA (natural)</td>
 				<td class="calculated shadowed" id="ACnatural"></td>
 			</tr>
 		</table>
@@ -242,34 +242,35 @@
 				<td></td>
 			</tr>
 			<tr>
-				<td colspan="4">Hechicero, Mago</td>
+				<td colspan="4" class="classNames">Hechicero, Mago</td>
 				<td>d6</td>
 				<td><input class="number shadowed" id="d6DiceActual" type="number"></td>
 				<td id="d6DiceMax" class="calculated"></td>
 				<td><input class="btn" type="button" value="Usar"></td>
 			</tr>
 			<tr>
-				<td colspan="4">Bardo, Clérigo, Druida, Pícaro, Monje, Brujo</td>
+				<td colspan="4" class="classNames">Bardo, Clérigo, Druida, Pícaro, Monje, Brujo</td>
 				<td>d8</td>
 				<td><input class="number shadowed" id="d8DiceActual" type="number"></td>
 				<td class="calculated" id="d8DiceMax"></td>
 				<td><input class="btn" type="button" value="Usar"></td>
 			</tr>
 			<tr>
-				<td colspan="4">Guerrero, Paladín, Explorador</td>
+				<td colspan="4" class="classNames">Guerrero, Paladín, Explorador</td>
 				<td>d10</td>
 				<td><input class="number shadowed" id="d10DiceActual" type="number"></td>
 				<td class="calculated" id="d10DiceMax"></td>
 				<td><input class="btn" type="button" value="Usar"></td>
 			</tr>
 			<tr>
-				<td colspan="4">Bárbaro</td>
+				<td colspan="4" class="classNames">Bárbaro</td>
 				<td>d12</td>
 				<td><input class="number shadowed" id="d12DiceActual" type="number"></td>
 				<td class="calculated" id="d12DiceMax"></td>
 				<td><input class="btn" type="button" value="Usar"></td>
 			</tr>
 		</table>
+		<!--Tabla de inspiracion y muerte-->
 		<table class="bodyTables" id="deathInspiration">
 			<tr class="blackRow">
 				<td colspan="6">Muerte e inspiración</td>
@@ -295,7 +296,7 @@
 		</table>
 	</div>
 	<!--Contenedor de habilidades-->
-	<div id="skills">
+	<div id="skills" class="floatable">
 		<!--Tabla de habilidades-->
 		<table class="bodyTables" id="skillsTable">
 			<tr class="blackRow">
@@ -316,7 +317,7 @@
 							<td>Pasiva</td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Acrobacias(Des)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Acrobacias(Des)</td>
 							<td colspan="3"><select id="acrobaticsProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -330,7 +331,7 @@
 							<td id="acrobaticsPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Manejo de animales(Sab)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Manejo de animales(Sab)</td>
 							<td colspan="3"><select id="animalHandlingProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -344,7 +345,7 @@
 							<td id="animalHandlingPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Arcana(Int)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Arcana(Int)</td>
 							<td colspan="3"><select id="arcanaProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -358,7 +359,7 @@
 							<td id="arcanaPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Atletismo(Fue)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Atletismo(Fue)</td>
 							<td colspan="3"><select id="athleticsProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -372,7 +373,7 @@
 							<td id="athleticsPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Engaño(Car)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Engaño(Car)</td>
 							<td colspan="3"><select id="deceptionProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -386,7 +387,7 @@
 							<td id="deceptionPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Historia(Int)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Historia(Int)</td>
 							<td colspan="3"><select id="historyProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -400,7 +401,7 @@
 							<td id="historyPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Perspicacia(Car)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Perspicacia(Car)</td>
 							<td colspan="3"><select id="insightProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -414,7 +415,7 @@
 							<td id="insightPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Intimidación(Car)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Intimidación(Car)</td>
 							<td colspan="3"><select id="intimidationProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -428,7 +429,7 @@
 							<td id="intimidationPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Investigación(Car)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Investigación(Car)</td>
 							<td colspan="3"><select id="investigationProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -455,7 +456,7 @@
 							<td>Pasiva</td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Medicina(Sab)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Medicina(Sab)</td>
 							<td colspan="3"><select id="medicineProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -469,7 +470,7 @@
 							<td id="medicinePas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Naturaleza(Int)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Naturaleza(Int)</td>
 							<td colspan="3"><select id="natureProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -483,7 +484,7 @@
 							<td id="naturePas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Percepción(Sab)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Percepción(Sab)</td>
 							<td colspan="3"><select id="perceptionProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -497,7 +498,7 @@
 							<td id="perceptionPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Interpretrar(Car)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Interpretrar(Car)</td>
 							<td colspan="3"><select id="performanceProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -511,7 +512,7 @@
 							<td id="performancePas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Persuasión(Car)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Persuasión(Car)</td>
 							<td colspan="3"><select id="persuasionProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -525,7 +526,7 @@
 							<td id="persuasionPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Religión(Int)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Religión(Int)</td>
 							<td colspan="3"><select id="religionProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -539,7 +540,7 @@
 							<td id="religionPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Juego de manos(Des)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Juego de manos(Des)</td>
 							<td colspan="3"><select id="sleightOfHandProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -553,7 +554,7 @@
 							<td id="sleightOfHandPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Sigilo(Des)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Sigilo(Des)</td>
 							<td colspan="3"><select id="stealthProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -567,7 +568,7 @@
 							<td id="stealthPas" class="passive"></td>
 						</tr>
 						<tr>
-							<td colspan="4"><input type="button" value="0"> Supervivencia(Sab)</td>
+							<td colspan="4" class="skillNames"><input type="button" value="0"> Supervivencia(Sab)</td>
 							<td colspan="3"><select id="survivalProfType">
 											  <option value="0">No</option>
 	  										  <option value="1">Aprendíz de todo</option>
@@ -712,7 +713,7 @@
 		</table>
 	</div>
 	<!--Contenedor de transfondo-->
-	<div id="background">
+	<div id="background" class="floatable">
 		<!--Tabla de apariencia-->
 		<table class="bodyTables" id="appearanceTable">
 			<tr class="blackRow">
@@ -764,9 +765,9 @@
 				<td>Rasgos personales</td>
 			</tr>
 			<tr>
-				<td><textarea class="backgroundTexts" rows="8" id="backgroundText"></textarea></td>
-				<td><textarea class="backgroundTexts" rows="8" id="racialTraitsText"></textarea></td>
-				<td><textarea class="backgroundTexts" rows="8" id="personalityTraitsText"></textarea></td>
+				<td><textarea class="backgroundTexts shadowed" rows="8" id="backgroundText"></textarea></td>
+				<td><textarea class="backgroundTexts shadowed" rows="8" id="racialTraitsText"></textarea></td>
+				<td><textarea class="backgroundTexts shadowed" rows="8" id="personalityTraitsText"></textarea></td>
 			</tr>
 			<tr class="emptyRow">
 				<td colspan="3"></td>
@@ -777,9 +778,9 @@
 				<td>Fallos</td>
 			</tr>
 			<tr>
-				<td><textarea class="backgroundTexts" rows="8" id="idealsText"></textarea></td>
-				<td><textarea class="backgroundTexts" rows="8" id="bondsText"></textarea></td>
-				<td><textarea class="backgroundTexts" rows="8" id="flawsTraitText"></textarea></td>
+				<td><textarea class="backgroundTexts shadowed" rows="8" id="idealsText"></textarea></td>
+				<td><textarea class="backgroundTexts shadowed" rows="8" id="bondsText"></textarea></td>
+				<td><textarea class="backgroundTexts shadowed" rows="8" id="flawsTraitText"></textarea></td>
 			</tr>
 		</table>
 		<!--Tabla de proficiencia con equipamiento-->
@@ -795,10 +796,10 @@
 				<td>Armas</td>
 				<td>Herramientas</td>
 			</tr>
-			<tr>
-				<td><textarea class="backgroundTexts" rows="8" id="armorurProficienciesText"></textarea></td>
-				<td><textarea class="backgroundTexts" rows="8" id="weaponProficienciesText"></textarea></td>
-				<td><textarea class="backgroundTexts" rows="8" id="toolProficienciesText"></textarea></td>
+			<tr> shadowed
+				<td><textarea class="backgroundTexts shadowed" rows="8" id="armorurProficienciesText"></textarea></td>
+				<td><textarea class="backgroundTexts shadowed" rows="8" id="weaponProficienciesText"></textarea></td>
+				<td><textarea class="backgroundTexts shadowed" rows="8" id="toolProficienciesText"></textarea></td>
 			</tr>
 		</table>
 		<!--Tabla de cualquier otra nota-->
@@ -810,7 +811,238 @@
 				<td colspan="3"></td>
 			</tr>
 			<tr>
-				<td colspan="3"><textarea class="backgroundTexts" rows="8" id="otherNotesText"></textarea></td>
+				<td colspan="3"><textarea class="backgroundTexts shadowed" rows="8" id="otherNotesText"></textarea></td>
+			</tr>
+		</table>
+	</div>
+	<!--Contenedor de clase-->
+	<div id="classes" class="floatable">
+		<!--Tabla de niveles de clases-->
+		<table class="bodyTables" id="classLevels">
+			<tr class="blackRow">
+				<td colspan="19">Niveles de clases</td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="19"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="rightText">Bárbaro&nbsp; </td>
+				<td><input id="barbarianLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td colspan="2" class="rightText">Bardo&nbsp; </td>
+				<td><input id="bardLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td colspan="2" class="rightText">Clérigo&nbsp; </td>
+				<td><input id="clericLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td colspan="2" class="rightText">Druida&nbsp; </td>
+				<td><input id="druidLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td colspan="2" class="rightText">Guerrero&nbsp; </td>
+				<td><input id="fighterLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td colspan="2" class="rightText">Monje&nbsp; </td>
+				<td><input id="monkLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td></td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="19"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="rightText">Paladín&nbsp; </td>
+				<td><input id="paladinLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td colspan="2" class="rightText">Explorador&nbsp; </td>
+				<td><input id="rangerLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td colspan="2" class="rightText">Pícaro&nbsp; </td>
+				<td><input id="rogueLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td colspan="2" class="rightText">Hechicero&nbsp; </td>
+				<td><input id="sorcererLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td colspan="2" class="rightText">Mago&nbsp; </td>
+				<td><input id="mageLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td colspan="2" class="rightText">Brujo&nbsp; </td>
+				<td><input id="warlockLevels" class="number shadowed" type="number" min="0" value="0"></td>
+				<td></td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="19"></td>
+			</tr>
+		</table>
+		<!--Tabla notas de clase y raza-->
+		<table id="classRaceNotes" class="bodyTables">
+			<tr class="blackRow">
+				<td colspan="223">Notas de clase y raza</td>
+			</tr>
+			<tr class="emptyRow">
+				<td colspan="223"></td>
+			</tr>
+			<tr>
+				<td class="greyCell" colspan="111">Notas de clase</td>
+				<td></td>
+				<td class="greyCell" colspan="111">Notas de raza</td>
+			</tr>
+			<tr>
+				<td colspan="111"><textarea class="backgroundTexts shadowed" rows="25"></textarea></td>
+				<td></td>
+				<td colspan="111"><textarea class="backgroundTexts shadowed" rows="25"></textarea></td>
+			</tr>
+		</table>
+		<!--Lista de acciones-->
+		<div id="classActions" class="floatable">
+			<h4>Acciones y dotes</h4>
+			<div id="leftButton"><input type="button" type="btn" value="+Añadir"></div>
+			<div id="rightButton"><input type="button" type="btn" value="Modificar"></div>
+		</div>
+	</div>
+	<!--Contenedor de armas-->
+	<div id="weapons" class="floatable">
+		<!--Tabla de armas a melee-->
+		<table id="meleeWeapons" class="bodyTables">
+			<tr class="blackRow">
+				<td colspan="102">Armas cuerpo a cuerpo</td>
+			</tr>
+			<tr class="emptyRow">
+				<td></td>
+			</tr>
+			<tr class="greyRow smallFont">
+				<td colspan="4">Prof?</td>
+				<td colspan="21">Arma</td>
+				<td colspan="10">Atributo</td>
+				<td colspan="8">Bonus</td>
+				<td colspan="5">Golpe</td>
+				<td colspan="8">Daño</td>
+				<td colspan="4">+ atr?</td>
+				<td colspan="5">Daño Bonus</td>
+				<td colspan="13">Tipo de daño</td>
+				<td colspan="10">Daño crítico</td>
+				<td colspan="8">Rango crítico</td>
+				<td colspan="6">Ataque</td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="checkbox" checked="checked" id="meleeWeapon1prof"></td>
+				<td colspan="21"><input type="text" class="txt" id="meleeWeapon1name"></td>
+				<td colspan="10"><select id="meleeWeapon1atr">
+									<option value="0">FUE</option>
+									<option value="1">Sutileza</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select></td>
+				<td colspan="8"><input type="number" class="number" id="meleeWeapon1hitBonus" min="-40" max="40" value="0"></td>
+				<td colspan="5" class="calculated" id="meleeWeapon1hit"></td>
+				<td colspan="8"><input type="text" class="txt" id="meleeWeapon1dmg"></td>
+				<td colspan="4"><input type="checkbox" checked="checked" id="meleeWeapon1addAtr"></td>
+				<td colspan="5" class="calculated" id="meleeWeapon1dmgBonus"></td>
+				<td colspan="13"><input type="text" class="txt" id="meleeWeapon1dmgType"></td>
+				<td colspan="10"><input type="text" class="txt" id="meleeWeapon1critDmg"></td>
+				<td colspan="8"><input type="number" class="number" id="meleeWeapon1critRange" min="1" max="20" value="20"></td>
+				<td colspan="6"><input type="button" class="btn" value="Atacar"></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="checkbox" checked="checked" id="meleeWeapon2prof"></td>
+				<td colspan="21"><input type="text" class="txt" id="meleeWeapon2name"></td>
+				<td colspan="10"><select id="meleeWeapon2atr">
+									<option value="0">FUE</option>
+									<option value="1">Sutileza</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select></td>
+				<td colspan="8"><input type="number" class="number" id="meleeWeapon2hitBonus" min="-40" max="40" value="0"></td>
+				<td colspan="5" class="calculated" id="meleeWeapon2hit"></td>
+				<td colspan="8"><input type="text" class="txt" id="meleeWeapon2dmg"></td>
+				<td colspan="4"><input type="checkbox" checked="checked" id="meleeWeapon2addAtr"></td>
+				<td colspan="5" class="calculated" id="meleeWeapon2dmgBonus"></td>
+				<td colspan="13"><input type="text" class="txt" id="meleeWeapon2dmgType"></td>
+				<td colspan="10"><input type="text" class="txt" id="meleeWeapon2critDmg"></td>
+				<td colspan="8"><input type="number" class="number" id="meleeWeapon2critRange" min="1" max="20" value="20"></td>
+				<td colspan="6"><input type="button" class="btn" value="Atacar"></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="checkbox" checked="checked" id="meleeWeapon3prof"></td>
+				<td colspan="21"><input type="text" class="txt" id="meleeWeapon3name"></td>
+				<td colspan="10"><select id="meleeWeapon3atr">
+									<option value="0">FUE</option>
+									<option value="1">Sutileza</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select></td>
+				<td colspan="8"><input type="number" class="number" id="meleeWeapon3hitBonus" min="-40" max="40" value="0"></td>
+				<td colspan="5" class="calculated" id="meleeWeapon3hit"></td>
+				<td colspan="8"><input type="text" class="txt" id="meleeWeapon3dmg"></td>
+				<td colspan="4"><input type="checkbox" checked="checked" id="meleeWeapon3addAtr"></td>
+				<td colspan="5" class="calculated" id="meleeWeapon3dmgBonus"></td>
+				<td colspan="13"><input type="text" class="txt" id="meleeWeapon3dmgType"></td>
+				<td colspan="10"><input type="text" class="txt" id="meleeWeapon3critDmg"></td>
+				<td colspan="8"><input type="number" class="number" id="meleeWeapon3critRange" min="1" max="20" value="20"></td>
+				<td colspan="6"><input type="button" class="btn" value="Atacar"></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="checkbox" checked="checked" id="meleeWeapon4prof"></td>
+				<td colspan="21"><input type="text" class="txt" id="meleeWeapon4name"></td>
+				<td colspan="10"><select id="meleeWeapon4atr">
+									<option value="0">FUE</option>
+									<option value="1">Sutileza</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select></td>
+				<td colspan="8"><input type="number" class="number" id="meleeWeapon4hitBonus" min="-40" max="40" value="0"></td>
+				<td colspan="5" class="calculated" id="meleeWeapon4hit"></td>
+				<td colspan="8"><input type="text" class="txt" id="meleeWeapon4dmg"></td>
+				<td colspan="4"><input type="checkbox" checked="checked" id="meleeWeapon4addAtr"></td>
+				<td colspan="5" class="calculated" id="meleeWeapon4dmgBonus"></td>
+				<td colspan="13"><input type="text" class="txt" id="meleeWeapon4dmgType"></td>
+				<td colspan="10"><input type="text" class="txt" id="meleeWeapon4critDmg"></td>
+				<td colspan="8"><input type="number" class="number" id="meleeWeapon4critRange" min="1" max="20" value="20"></td>
+				<td colspan="6"><input type="button" class="btn" value="Atacar"></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="checkbox" checked="checked" id="meleeWeapon5prof"></td>
+				<td colspan="21"><input type="text" class="txt" id="meleeWeapon5name"></td>
+				<td colspan="10"><select id="meleeWeapon5atr">
+									<option value="0">FUE</option>
+									<option value="1">Sutileza</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select></td>
+				<td colspan="8"><input type="number" class="number" id="meleeWeapon5hitBonus" min="-40" max="40" value="0"></td>
+				<td colspan="5" class="calculated" id="meleeWeapon5hit"></td>
+				<td colspan="8"><input type="text" class="txt" id="meleeWeapon5dmg"></td>
+				<td colspan="4"><input type="checkbox" checked="checked" id="meleeWeapon5addAtr"></td>
+				<td colspan="5" class="calculated" id="meleeWeapon5dmgBonus"></td>
+				<td colspan="13"><input type="text" class="txt" id="meleeWeapon5dmgType"></td>
+				<td colspan="10"><input type="text" class="txt" id="meleeWeapon5critDmg"></td>
+				<td colspan="8"><input type="number" class="number" id="meleeWeapon5critRange" min="1" max="20" value="20"></td>
+				<td colspan="6"><input type="button" class="btn" value="Atacar"></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="checkbox" checked="checked" id="meleeWeapon6prof"></td>
+				<td colspan="21"><input type="text" class="txt" id="meleeWeapon6name"></td>
+				<td colspan="10"><select id="meleeWeapon6atr">
+									<option value="0">FUE</option>
+									<option value="1">Sutileza</option>
+									<option value="2">DES</option>		
+									<option value="3">CON</option>
+									<option value="4">INT</option>
+									<option value="5">SAB</option>
+									<option value="6">CAR</option>	
+								</select></td>
+				<td colspan="8"><input type="number" class="number" id="meleeWeapon6hitBonus" min="-40" max="40" value="0"></td>
+				<td colspan="5" class="calculated" id="meleeWeapon6hit"></td>
+				<td colspan="8"><input type="text" class="txt" id="meleeWeapon6dmg"></td>
+				<td colspan="4"><input type="checkbox" checked="checked" id="meleeWeapon6addAtr"></td>
+				<td colspan="5" class="calculated" id="meleeWeapon6dmgBonus"></td>
+				<td colspan="13"><input type="text" class="txt" id="meleeWeapon6dmgType"></td>
+				<td colspan="10"><input type="text" class="txt" id="meleeWeapon6critDmg"></td>
+				<td colspan="8"><input type="number" class="number" id="meleeWeapon6critRange" min="1" max="20" value="20"></td>
+				<td colspan="6"><input type="button" class="btn" value="Atacar"></td>
 			</tr>
 		</table>
 	</div>

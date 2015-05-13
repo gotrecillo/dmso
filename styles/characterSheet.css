@@ -3,9 +3,21 @@ html, body{
 	width: 98%;
 }
 
-div#header, div#stats, div#skills, div#background {
+div#header, div#stats, div#skills, div#background, div#classes, div#weapons {
 	width: 80%;
 	margin: 0 auto;
+}
+/*Lo que afecta a floateable y .floateable:after consigue que los div con elementos con float dentro tengan una altura definida*/
+.floatable{
+	overflow: hidden;
+}
+
+.floatable:after
+{
+content:".";
+display:block;
+clear:both;
+visibility:hidden;
 }
 
 input.txt, input.btn, input.number{
@@ -29,6 +41,7 @@ select {
    -webkit-appearance: none;
    -moz-appearance: none;
    appearance: none;
+   font-size: 0.7em;
     background: url(../images/dropdown.ico) 96% / 15% no-repeat #eee;
 } 
 
@@ -78,6 +91,14 @@ tr.greyRow td:last-child{
 	padding-right: 0.6em;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
+}
+
+td.greyCell{
+	background-color: lightgrey;
+	color: grey;
+	border-radius: 10px;
+	font-style: italic;
+	font-weight: bolder;
 }
 
 /*Tabla superior*/
@@ -209,15 +230,6 @@ table#bonusTable tr td.legendBonus{
 	font-weight: bolder;
 }
 
-table#bonusTable tr td.greyCell{
-	background-color: lightgrey;
-	color: grey;
-	border-radius: 10px;
-	font-style: italic;
-	font-weight: bolder;
-}
-
-
 table#bonusTable tr td input.bonusInputs{
 	width: 100%;
 	text-align: center;
@@ -228,6 +240,10 @@ table#hitDieTable{
 	table-layout: fixed;
 	width: 50%;
 	border-spacing: 0 0.3em;
+}
+
+.classNames{
+	font-size: 0.8em;
 }
 
 /*Tabla de muerte e inspiracion*/
@@ -273,6 +289,10 @@ table.innerTable{
 	border-spacing: 0 0.1em;
 }
 
+.skillNames{
+	font-size: 0.7em;
+}
+
 .emptyCol{
 	width: 0.5em;
 }
@@ -313,4 +333,64 @@ table#anyOtherNoteTable{
 	table-layout: fixed;
 	width: 85%;
 	border-spacing: 0 0.1em;
+}
+
+/*Tabla de niveles de clases*/
+table#classLevels{
+	table-layout: fixed;
+	width: 85%;
+	border-spacing: 0 0.1em;
+}
+
+.rightText{
+	text-align: right;
+}
+
+/*Tabla de notas de clase y raza*/
+table#classRaceNotes{
+	table-layout: fixed;
+	width: 85%;
+	border-spacing: 0 0.1em;
+}
+
+/*Lista de acciones*/
+div#classActions{
+	margin-left: 5%;
+	width: 85%;
+	float: left;
+	position: relative;
+}
+
+h4{
+	margin-bottom: 0.3%;
+	background-color: black;
+	border-radius: 10px;
+	color: white;
+	text-align: center;
+	padding: 0.1em;
+}
+
+div#leftButton{
+	width: 5%;
+	height: 5%;
+	margin-left: 35%;
+	float: left;
+}
+
+div#rightButton{
+	float: right;
+	width: 5%;
+	margin-right: 35%;
+	height: 5%;
+}
+
+/*Tabla de armas a melee*/
+table#meleeWeapons{
+	table-layout: fixed;
+	width: 85%;
+	border-spacing: 0 0.1em;
+}
+
+.smallFont{
+	font-size: 0.8em;
 }
